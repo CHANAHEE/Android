@@ -8,39 +8,70 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bitbit"
+            android:textSize="30sp"
+            android:textColor="#575961"
+            android:text=" ROUND  "/>
+
+        <TextView
+            android:id="@+id/round"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bitbit"
+            android:textColor="#575961"
+            android:textSize="30sp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="530dp"
-        android:background="gr">
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="68dp"
+        android:paddingRight="68dp"
+        android:layout_weight="1">
 
         <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="300dp"
-            android:orientation="vertical"
-            android:layout_marginTop="100dp"
-            android:layout_marginLeft="85dp"
-            android:background="@drawable/resultlayout">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/resultlayout"
+            android:orientation="vertical">
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="선택 결과"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                />
+                android:text="선 택 결 과"
+                android:fontFamily="@font/bitbit"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <TextView
                     android:id="@+id/num1"
                     android:layout_width="80dp"
                     android:layout_height="70dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
                     android:background="@drawable/num1"
-                    android:layout_weight="1"/>
+                    android:gravity="center"
+                    android:fontFamily="@font/bitbit"
+                    android:textSize="40sp"/>
 
                 <TextView
                     android:id="@+id/num2"
@@ -48,8 +79,11 @@
                     android:layout_height="70dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
+                    android:layout_weight="1"
                     android:background="@drawable/num1"
-                    android:layout_weight="1"/>
+                    android:gravity="center"
+                    android:fontFamily="@font/bitbit"
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/num3"
@@ -57,63 +91,70 @@
                     android:layout_height="70dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/num1"
-                    android:layout_weight="1"/>
+                    android:gravity="center"
+                    android:fontFamily="@font/bitbit"
+                    android:textSize="40sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="STRIKE"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="25dp"
-                    android:textSize="30dp"
-                    android:fontFamily="@font/Tenada"/>
+                    android:fontFamily="@font/bitbit"
+                    android:textColor="#3580BC"
+                    android:text="STRIKE"
+                    android:textSize="30dp" />
 
                 <TextView
                     android:id="@+id/strike"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
+                    android:textColor="#3580BC"
                     android:layout_marginTop="25dp"
-                    android:text="111"
-                    android:textSize="30dp"
                     android:layout_marginRight="10dp"
+                    android:fontFamily="@font/bitbit"
+                    android:text="111"
                     android:textDirection="rtl"
-                    android:fontFamily="@font/Tenada"/>
+                    android:textSize="30dp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="BALL"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:textSize="30dp"
-                    android:fontFamily="@font/Tenada"/>
+                    android:fontFamily="@font/bitbit"
+                    android:textColor="#668A3C"
+                    android:text="BALL"
+                    android:textSize="30dp" />
 
                 <TextView
                     android:id="@+id/ball"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
+                    android:textColor="#668A3C"
                     android:layout_marginTop="10dp"
-                    android:text="111"
-                    android:textSize="30dp"
                     android:layout_marginRight="10dp"
+                    android:fontFamily="@font/bitbit"
+                    android:text="111"
                     android:textDirection="rtl"
-                    android:fontFamily="@font/Tenada"/>
+                    android:textSize="30dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -124,33 +165,51 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="OUT"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:textSize="30dp"
-                    android:fontFamily="@font/Tenada"/>
+                    android:fontFamily="@font/bitbit"
+                    android:textColor="#B63D3D"
+                    android:text="OUT"
+                    android:textSize="30dp" />
 
                 <TextView
                     android:id="@+id/out"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-                    android:text="111"
-                    android:textSize="30dp"
+                    android:textColor="#B63D3D"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
+                    android:fontFamily="@font/bitbit"
+                    android:text="111"
                     android:textDirection="rtl"
-                    android:fontFamily="@font/Tenada"/>
+                    android:textSize="30dp" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
 
-
+                <TextView
+                    android:id="@+id/gameResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/result_success"
+                    android:fontFamily="@font/bitbit"
+                    android:textColor="#3E57E1"
+                    android:textSize="40sp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:paddingTop="30dp"
+                    android:paddingBottom="30dp"
+                    />
+            </LinearLayout>
 
 
         </LinearLayout>
 
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -158,133 +217,187 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             >
 
             <Button
                 android:id="@+id/btn0"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginRight="5dp"
-                android:layout_marginLeft="17dp"
                 android:text="0"
-                android:textSize="25sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 android:backgroundTint="#9CB580"
-                android:fontFamily="@font/Tenada"
+                android:fontFamily="@font/bitbit"
+                android:enabled="true"
+
                 />
 
             <Button
                 android:id="@+id/btn1"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginRight="5dp"
                 android:text="1"
-                android:textSize="25sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 android:backgroundTint="#9CB580"
-                android:fontFamily="@font/Tenada"/>
+                android:fontFamily="@font/bitbit"
+                android:enabled="true"
+                />
 
             <Button
                 android:id="@+id/btn2"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginRight="5dp"
                 android:text="2"
-                android:textSize="25sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 android:backgroundTint="#9CB580"
-                android:fontFamily="@font/Tenada"/>
+                android:fontFamily="@font/bitbit"
+                android:enabled="true"
+                />
 
             <Button
                 android:id="@+id/btn3"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginRight="5dp"
                 android:text="3"
-                android:textSize="25sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 android:backgroundTint="#9CB580"
-                android:fontFamily="@font/Tenada"/>
+                android:fontFamily="@font/bitbit"
+                android:enabled="true"
+                />
 
             <Button
                 android:id="@+id/btn4"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginRight="5dp"
                 android:text="4"
-                android:textSize="25sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 android:backgroundTint="#9CB580"
-                android:fontFamily="@font/Tenada"/>
+                android:fontFamily="@font/bitbit"
+                android:enabled="true"
+                />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/btn5"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginRight="5dp"
-                android:layout_marginLeft="17dp"
                 android:text="5"
-                android:textSize="25sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 android:backgroundTint="#9CB580"
-                android:fontFamily="@font/Tenada"
+                android:fontFamily="@font/bitbit"
+                android:enabled="true"
                 />
 
             <Button
                 android:id="@+id/btn6"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginRight="5dp"
                 android:text="6"
-                android:textSize="25sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 android:backgroundTint="#9CB580"
-                android:fontFamily="@font/Tenada"/>
+                android:fontFamily="@font/bitbit"
+                android:enabled="true"
+                />
 
             <Button
                 android:id="@+id/btn7"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginRight="5dp"
                 android:text="7"
-                android:textSize="25sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 android:backgroundTint="#9CB580"
-                android:fontFamily="@font/Tenada"/>
+                android:fontFamily="@font/bitbit"
+                android:enabled="true"
+                />
 
             <Button
                 android:id="@+id/btn8"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginRight="5dp"
                 android:text="8"
-                android:textSize="25sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 android:backgroundTint="#9CB580"
-                android:fontFamily="@font/Tenada"/>
+                android:fontFamily="@font/bitbit"
+                android:enabled="true"
+                />
 
             <Button
                 android:id="@+id/btn9"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginRight="5dp"
                 android:text="9"
-                android:textSize="25sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 android:backgroundTint="#9CB580"
-                android:fontFamily="@font/Tenada"/>
+                android:fontFamily="@font/bitbit"
+                android:enabled="true"
+                />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
             <Button
                 android:id="@+id/btn_back"
                 android:layout_width="70dp"
@@ -296,7 +409,7 @@
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:backgroundTint="#5F6E4E"
-                android:fontFamily="@font/Tenada"/>
+                android:fontFamily="@font/bitbit"/>
 
             <Button
                 android:id="@+id/btn_clear"
@@ -309,7 +422,7 @@
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:backgroundTint="#5F6E4E"
-                android:fontFamily="@font/Tenada"/>
+                android:fontFamily="@font/bitbit"/>
         </LinearLayout>
 
     </LinearLayout>
