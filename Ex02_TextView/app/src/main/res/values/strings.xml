@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Ex02_TextView</string>
+    <string name="brand_name">Nike</string>
+    <string name="slogan">Just Do It !</string>
+    <string name="shoes_menu">shoes</string>
+    <string name="tshirts_menu">T-shirts</string>
+    <string name="discription">A Feel For Every You</string>
+</resources>

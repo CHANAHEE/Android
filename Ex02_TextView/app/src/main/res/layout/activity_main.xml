@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--2_ 네임스페이스 값을 먼저 지정해줌 android, app, tools. 속성들의 이름이 너무 많아서 겹치지 않게 해주려고 설정됨.-->
+
+<!-- 12_ 리니어 레이아웃은 뷰의 중첩을 허용하지 않음. 그래서 위에놈이 match 이면 밑에 놈들이 다 작살난다.-->
+<!-- 먼저 온놈은 자리를 차지한다. 그래서 밑에 놈이 match 라면 위에놈은 놔두고 나머지 공간을 다 먹는다-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#7777B8">
+    <!--1_ xml 시작하기-->
+    <!-- 속성은 항상 시작태그 안쪽에!! 종료태그에는 작성할 수 없음.-->
+    <!-- 안드로이드의 화면을 구성하는 모든 View 에 필수로 있어야 하는 속성 : width, height-->
+    <!-- 가장 최상위 View가 width 와 height 을 속성으로 가지고 있음. -->
+
+    <!-- 2_ width 와 height 의 값을 설정하는 단위-->
+    <!-- 3_ "뷰" 크기값을 설정하는 방법 3가지-->
+    <!-- 1. 숫자와 단위 : dp(density independent pixel) , 500px 로 고정하면 핸드폰의 사이즈가 변한다고해도 사이즌 그대로다!-->
+    <!-- 예를 들어 1dp 가 있다. 어떤 핸드폰에서는 1px 어떤 핸드폰에서는 2px 이 되기도 한다. 즉, 핸드폰에 따라 dp 가 다르게 해석됨.-->
+    <!-- 그래서 dp 를 사용하면 완전하게는 아니지만, 비슷하게 유지된다. 그래서 고정된 px 값 보다는 해상도에 따라 다르게 표현되는 dp 가 권장된다.-->
+
+    <!-- 2. match parent : 부모에 꽉 채워서 설정-->
+    <!-- 3. wrap content : 안에 들어있는 콘텐츠를 감싸게 설정 -->
+
+    <!-- 4_ TextView 가 가지고 있는 여러가지 속성들 -->
+    <!-- 1. 뷰 크기, 2. 글씨, 3. 글씨 크기, 4. 글씨색깔, 5. 글씨스타일, 6. 배경색상, 7. 패팅과 마진-->
+    <!-- 4_1 글씨의 크기의 단위는 sp(scaled pixel) 가 권장됨. 뷰크기 - dp , 글씨크기 - sp 정해놓는 마인드-->
+    <!-- 4_2 색상 값 RGB : R( 00 ~ FF ) , G( 00 ~ FF ), B( 00 ~ FF )-->
+    <!-- 4_3 굵게, 이탈릭 설정 : textStyle -> 만일 2가지 설정을 모두 하고싶다면.. | 활용! 내부적으로 비트연산을 한다.   -->
+    <!-- 4_4 배경색상은 View 에도 있는 속성! 즉, 뷰라면 모두 가지고 있는 속성-->
+    <!-- 4_5 뷰와 뷰 사이의 거리는 margin , 뷰 와 안쪽의 컨텐츠사이의 거리 padding 이 속성은 View 의 속성이다!-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/brand_name"
+        android:textSize="50sp"
+        android:textColor="#F1D2D2"
+        android:textStyle="bold|italic"
+        android:background="#D67658"
+        android:padding="16dp"
+        android:gravity="center"
+        android:layout_marginTop="16dp"/>
+
+    <!-- 6_ visibility -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/slogan"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#DFD6ED"
+        android:padding="16dp"
+        android:gravity="center"
+        android:background="#4FB2DF"
+        android:visibility="visible"/>
+
+    <!-- 7_ 뷰안에 있는 콘텐츠의 정렬 -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/shoes_menu"
+        android:background="#EFA537"
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:textColor="#B36B00"
+        android:textSize="20sp"
+        android:layout_marginRight="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_gravity="center" />
+
+    <!-- 8_ 뷰 자체 정렬 -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#9ECD67"
+        android:textStyle="bold"
+        android:textColor="#57A100"
+        android:text="@string/tshirts_menu"
+        android:textSize="20sp"
+        android:padding="8dp"
+        android:backgroundTint="@color/black"
+        android:layout_marginRight="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_gravity="center"/>
+
+    <!-- 9_ 글꼴 지정 가능-->
+    <!-- res 폴더에 font 폴더 생성 후 글꼴파일 넣고 쓰면 됨.-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/discription"
+        android:background="#4E504B"
+        android:textColor="#AEB1A9"
+        android:padding="8dp"
+        android:textSize="20sp"
+        android:fontFamily="@font/cookierunblack"
+        android:gravity="center"/>
+
+    <!-- 10_ 문자열을 xml 파일로 만들어서 리소스로 활용해보자. -->
+    <!-- 문자열 값을 직접입력하면 하드코딩되었다고 스튜디오에서 알려줌-->
+    <!-- 식별자 이름을 속성으로 지정하고, 넣어줄 문자열 값을 태그 안에 입력-->
+    <!-- 5_ 배경 이미지 넣기-->
+    <!-- 5_1 고정된 값으로 TextView 를 설정할 경우 배경이미지는 찐따가됨. -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/sydney"/>
+
+
+    <!-- 11_ autoLink 기능 -->
+    <!-- 안드로이드 에서는 권장하지 않음 손가락이 뭉뚝하니까-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="www.naver.com"
+        android:autoLink="web"/>
+</LinearLayout>

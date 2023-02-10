@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/potato_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple_700"
+        android:layout_margin="20dp"
+        android:background="@drawable/potato"
+        android:gravity="center"/>
+
+    <!-- 1_ 버튼에 text 를 입력하면 다 대문자로 바꿔진다. 구글은 이게 이쁘다고 생각했나봄.-->
+    <!-- 기본적으로 capsLock 이 켜져있는데, 그걸 꺼주면 대소문자 구별해서 작성이 가능하다.-->
+    <Button
+        android:id="@+id/fryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Fry"
+        android:backgroundTint="#FF0000"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:id="@+id/myText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#302D2D"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/rip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="감자에게 보낼 메시지를 입력하세요."
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/sendBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Send" />
+    </LinearLayout>
+
+</LinearLayout>

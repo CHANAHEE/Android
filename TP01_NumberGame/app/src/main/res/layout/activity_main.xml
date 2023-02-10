@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    >
 
+    <Button
+        android:id="@+id/btn_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="다시하기"
+        android:fontFamily="@font/bitbit"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_gravity="right"
+        android:visibility="invisible"
+        />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
@@ -19,7 +32,8 @@
             android:fontFamily="@font/bitbit"
             android:textSize="30sp"
             android:textColor="#575961"
-            android:text=" ROUND  "/>
+            android:text=" ROUND  "
+            />
 
         <TextView
             android:id="@+id/round"
@@ -35,11 +49,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="5dp"
-        android:paddingTop="10dp"
+        android:layout_weight="1"
+        android:alpha="10"
+        android:background="@drawable/baseball"
         android:paddingLeft="68dp"
+        android:paddingTop="10dp"
         android:paddingRight="68dp"
-        android:layout_weight="1">
+        android:paddingBottom="5dp"
+        >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -51,9 +68,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:fontFamily="@font/bitbit"
                 android:gravity="center"
                 android:text="선 택 결 과"
-                android:fontFamily="@font/bitbit"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
@@ -69,9 +86,9 @@
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/num1"
-                    android:gravity="center"
                     android:fontFamily="@font/bitbit"
-                    android:textSize="40sp"/>
+                    android:gravity="center"
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/num2"
@@ -81,8 +98,8 @@
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/num1"
-                    android:gravity="center"
                     android:fontFamily="@font/bitbit"
+                    android:gravity="center"
                     android:textSize="40sp" />
 
                 <TextView
@@ -93,16 +110,16 @@
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/num1"
-                    android:gravity="center"
                     android:fontFamily="@font/bitbit"
+                    android:gravity="center"
                     android:textSize="40sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -110,19 +127,19 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/bitbit"
-                    android:textColor="#3580BC"
                     android:text="STRIKE"
+                    android:textColor="#3580BC"
                     android:textSize="30dp" />
 
                 <TextView
                     android:id="@+id/strike"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#3580BC"
                     android:layout_marginTop="25dp"
                     android:layout_marginRight="10dp"
                     android:fontFamily="@font/bitbit"
-                    android:text="111"
+                    android:text="0"
+                    android:textColor="#3580BC"
                     android:textDirection="rtl"
                     android:textSize="30dp" />
 
@@ -131,8 +148,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -140,19 +157,19 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/bitbit"
-                    android:textColor="#668A3C"
                     android:text="BALL"
+                    android:textColor="#668A3C"
                     android:textSize="30dp" />
 
                 <TextView
                     android:id="@+id/ball"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#668A3C"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:fontFamily="@font/bitbit"
-                    android:text="111"
+                    android:text="0"
+                    android:textColor="#668A3C"
                     android:textDirection="rtl"
                     android:textSize="30dp" />
             </LinearLayout>
@@ -168,19 +185,19 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/bitbit"
-                    android:textColor="#B63D3D"
                     android:text="OUT"
+                    android:textColor="#B63D3D"
                     android:textSize="30dp" />
 
                 <TextView
                     android:id="@+id/out"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#B63D3D"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:fontFamily="@font/bitbit"
-                    android:text="111"
+                    android:text="0"
+                    android:textColor="#B63D3D"
                     android:textDirection="rtl"
                     android:textSize="30dp" />
             </LinearLayout>
@@ -195,15 +212,14 @@
                     android:id="@+id/gameResult"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/result_success"
                     android:fontFamily="@font/bitbit"
-                    android:textColor="#3E57E1"
-                    android:textSize="40sp"
                     android:gravity="center"
-                    android:visibility="gone"
                     android:paddingTop="30dp"
                     android:paddingBottom="30dp"
-                    />
+                    android:text="@string/result_success"
+                    android:textColor="#3E57E1"
+                    android:textSize="40sp"
+                    android:visibility="gone" />
             </LinearLayout>
 
 
@@ -214,7 +230,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#4BB66C55">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -320,6 +337,7 @@
                 android:layout_weight="1"
                 android:layout_marginRight="5dp"
                 android:text="5"
+                android:textColor="#FFFFFF"
                 android:paddingTop="15dp"
                 android:paddingBottom="15dp"
                 android:textSize="30sp"
@@ -407,20 +425,20 @@
                 android:layout_marginRight="5dp"
                 android:text="지우기"
                 android:textStyle="bold"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:backgroundTint="#5F6E4E"
                 android:fontFamily="@font/bitbit"/>
 
             <Button
-                android:id="@+id/btn_clear"
+                android:id="@+id/btn_input"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginRight="22dp"
                 android:layout_marginLeft="5dp"
-                android:text="모두 지우기"
+                android:text="입     력"
                 android:textStyle="bold"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:backgroundTint="#5F6E4E"
                 android:fontFamily="@font/bitbit"/>
         </LinearLayout>
