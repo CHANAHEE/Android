@@ -30,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
         tv.setText("Hello World");
 
         // 6_ 액티비티에 tv 를 붙이기
-        // setContentView(tv);
+        setContentView(tv);
 
         // 7_ 버튼기능을 가진 객체를 생성하고 설정해보자
         btn = new Button(this);
         btn.setText("버튼");
-        // setContentView(btn);
+        setContentView(btn);
 
         // 8_ TextView 가 안보인다. 스윙처럼 겹쳐진걸까?
         // 아니다. TextView 를 뜯어내고 버튼을 붙인거다. 명령어를 보자. setContentView 는 말그대로 뷰를 set 하는것이고, 스윙에서는 컴포넌트를 추가할때, add 명령어를 사용한다.
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         layout.addView(btn);
 
         // 11_ 액티비티에 이 뷰그룹을 붙이자. setContentView 여러번 하면 에러!
-        setContentView(layout);
+        //setContentView(layout);
 
         // 13_ 버튼 클릭했을 때 TextView 의 글씨를 변경해보자!
         View.OnClickListener listener = new View.OnClickListener() {
