@@ -8,21 +8,27 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp">
 
-        <TableRow>
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="150dp">
+
+    <TableRow>
 <!--            width 와 height 이 자동으로 wrap_content 으로 설정됨 : 생략가능 -->
-            <Button/>
-            <Button/>
-            <Button/>
-            <Button/>
-            <Button/>
-            <Button/>
-            <Button/>
-        </TableRow>
-    </TableLayout>
+        <Button/>
+        <Button/>
+        <Button/>
+        <Button/>
+    </TableRow>
+    <TableRow>
+        <!--            width 와 height 이 자동으로 wrap_content 으로 설정됨 : 생략가능 -->
+        <Button/>
+        <Button/>
+        <Button/>
+        <Button/>
+    </TableRow>
+</TableLayout>
 <!--     세로병합 불가, 자동으로 처리해주는 부분도 있지만, 결국 중첩구조는 코드를 지저분하게 만드는 요인 중 하나. 성능도 안좋다. -->
 <!--     그래서 나온게 GridLayout !! -->
 </LinearLayout>
+

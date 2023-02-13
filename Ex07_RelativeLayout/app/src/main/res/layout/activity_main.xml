@@ -11,85 +11,125 @@
         android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/btn5"
         android:text="첫번째 버튼"/>
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="두번째 버튼"
-        android:layout_alignParentBottom="true" />
+        android:layout_above="@id/btn5"
+        android:text="두번째 버튼"/>
+
 
     <Button
         android:id="@+id/btn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="세번째 버튼"
-        android:layout_alignParentRight="true"/>
+        android:layout_toRightOf="@id/btn5"
+        android:text="세번째 버튼"/>
 
     <Button
         android:id="@+id/btn4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="네번째 버튼"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"/>
+        android:layout_toLeftOf="@id/btn5"
+        android:text="네번째 버튼"/>
 
     <Button
         android:id="@+id/btn5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="다섯번째 버튼"
         android:layout_centerInParent="true"
-        />
-<!-- alignParentRight / centerInParent -->
-    <Button
-        android:id="@+id/btn6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="여섯번째 버튼"
-        android:layout_centerInParent="true"
-        android:layout_alignParentRight="true"
-        />
-<!--layout_below-->
-    <Button
-        android:id="@+id/btn7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="일곱번째 버튼"
-        android:layout_below="@id/btn1"
-        />
-<!--    toRightOf-->
-    <Button
-        android:id="@+id/btn8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="일곱번째 버튼"
-        android:layout_toRightOf="@id/btn1"
-        />
+        android:text="다섯번째 버튼"/>
 
-<!--    above  -->
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World"
-        android:layout_above="@id/btn5"
-        android:layout_centerHorizontal="true"/>
 
-<!--    align  -->
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nice to meet you"
-        android:layout_below="@id/btn5"
-        android:layout_alignLeft="@id/btn5"/>
+    <!--    <Button-->
+<!--        android:id="@+id/btn2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="두번째 버튼"-->
+<!--        android:layout_alignParentBottom="true" />-->
 
-<!--    원래는 나중에 만들어진 뷰가 위로 온다. 하지만, 버튼은 우선순위가 특별하다.  -->
-<!--    버튼을 클릭되는 뷰이기 때문에 그래서 다른 뷰들보다 앞에 배치 된다.-->
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ic_launcher_background"/>
+<!--    <Button-->
+<!--        android:id="@+id/btn3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="세번째 버튼"-->
+<!--        android:layout_alignParentRight="true"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="네번째 버튼"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_alignParentRight="true"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn5"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="다섯번째 버튼"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        />-->
+<!--&lt;!&ndash; alignParentRight / centerInParent &ndash;&gt;-->
+<!--    <Button-->
+<!--        android:id="@+id/btn6"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="여섯번째 버튼"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        />-->
+<!--&lt;!&ndash;layout_below&ndash;&gt;-->
+<!--    <Button-->
+<!--        android:id="@+id/btn7"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="일곱번째 버튼"-->
+<!--        android:layout_below="@id/btn1"-->
+<!--        />-->
+<!--&lt;!&ndash;    toRightOf&ndash;&gt;-->
+<!--    <Button-->
+<!--        android:id="@+id/btn8"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="일곱번째 버튼"-->
+<!--        android:layout_toRightOf="@id/btn1"-->
+<!--        />-->
+
+<!--&lt;!&ndash;    above  &ndash;&gt;-->
+<!--    <Button-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Hello World"-->
+<!--        android:layout_above="@id/btn5"-->
+<!--        android:layout_centerHorizontal="true"/>-->
+
+<!--&lt;!&ndash;    align  &ndash;&gt;-->
+<!--    <Button-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="버튼5"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        align-->
+<!--        android:layout_alignRight="@id/btn5"/>-->
+
+
+<!--    <Button-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="버튼5"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_alignLeft="@id/btn5"/>-->
+
+<!--&lt;!&ndash;    원래는 나중에 만들어진 뷰가 위로 온다. 하지만, 버튼은 우선순위가 특별하다.  &ndash;&gt;-->
+<!--&lt;!&ndash;    버튼을 클릭되는 뷰이기 때문에 그래서 다른 뷰들보다 앞에 배치 된다.&ndash;&gt;-->
+<!--    <ImageView-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:src="@drawable/ic_launcher_background"/>-->
 
 
 
