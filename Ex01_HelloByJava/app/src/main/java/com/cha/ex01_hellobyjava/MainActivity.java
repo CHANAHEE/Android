@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tv;
     Button btn;
     LinearLayout layout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         // 그래서 하나의 큰 뷰를 설정하고 그 큰 뷰위에 다른 작은 뷰를 놓아보자! 이 큰 뷰를 ViewGroup 이라고 한다. 그 중 대표적인 ViewGroup 이 Layout! 레이아웃에 관해서는 차차 알아보자.
 
 
-
         // 9_ ViewGroup 중 가장 간단한 LinearLayout 이라는 이름의 클래스를 객체로 만들어서 사용
         layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL); // 12_ 리니어 레이아웃 방향 변경
@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         btn.setOnClickListener(listener);
-
-        // 15_ 가만히 쳐다보니 액티비티에 버튼이 몇개있는지, 레이아웃이 몇갠지 한눈에 잘 들어오지 않는다. 자바로 화면을 구성을 할 수는 있지만 복잡한 앱에서는 많이 불편할것같다. 그래서 XML 을 활용하자!
     }
 }
+        // 15_ 가만히 쳐다보니 액티비티에 버튼이 몇개있는지, 레이아웃이 몇갠지 한눈에 잘 들어오지 않는다. 자바로 화면을 구성을 할 수는 있지만 복잡한 앱에서는 �

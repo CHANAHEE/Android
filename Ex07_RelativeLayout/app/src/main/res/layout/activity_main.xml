@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<!--    1_ RelativeLayout 의 경우 ID 값을 지정해줘야, xml 에서 상대적인 위치를 지정해줄 수 있다. -->
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="첫번째 버튼"/>
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="두번째 버튼"
+        android:layout_alignParentBottom="true" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="세번째 버튼"
+        android:layout_alignParentRight="true"/>
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="네번째 버튼"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="다섯번째 버튼"
+        android:layout_centerInParent="true"
+        />
+<!-- alignParentRight / centerInParent -->
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="여섯번째 버튼"
+        android:layout_centerInParent="true"
+        android:layout_alignParentRight="true"
+        />
+<!--layout_below-->
+    <Button
+        android:id="@+id/btn7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="일곱번째 버튼"
+        android:layout_below="@id/btn1"
+        />
+<!--    toRightOf-->
+    <Button
+        android:id="@+id/btn8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="일곱번째 버튼"
+        android:layout_toRightOf="@id/btn1"
+        />
+
+<!--    above  -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World"
+        android:layout_above="@id/btn5"
+        android:layout_centerHorizontal="true"/>
+
+<!--    align  -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nice to meet you"
+        android:layout_below="@id/btn5"
+        android:layout_alignLeft="@id/btn5"/>
+
+<!--    원래는 나중에 만들어진 뷰가 위로 온다. 하지만, 버튼은 우선순위가 특별하다.  -->
+<!--    버튼을 클릭되는 뷰이기 때문에 그래서 다른 뷰들보다 앞에 배치 된다.-->
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_launcher_background"/>
+
+
+
+</RelativeLayout>

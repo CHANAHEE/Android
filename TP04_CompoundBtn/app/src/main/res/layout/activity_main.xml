@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Regist Member Information"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:textSize="16sp"/>
+    <!-- 이름 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+<!--         이름         -->
+        <TextView
+            android:id="@+id/nameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="NAME : " />
+        <EditText
+            android:id="@+id/nameEdit"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:layout_toRightOf="@id/nameTv"/>
+
+
+<!--        성별          -->
+        <TextView
+            android:id="@+id/genderTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_alignRight="@id/nameTv"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/nameTv"
+            android:text="GENDER : "/>
+
+        <RadioGroup
+            android:id="@+id/genderRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/genderTv"
+            android:orientation="horizontal"
+            android:layout_below="@id/nameEdit"
+            >
+            <RadioButton
+                android:id="@+id/maleRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:checked="true"
+                android:text="MALE"/>
+
+            <RadioButton
+                android:id="@+id/femaleRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FEMALE"/>
+        </RadioGroup>
+<!--        도시          -->
+        <TextView
+            android:id="@+id/cityTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_alignRight="@id/nameTv"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/genderTv"
+            android:text="CITY : "/>
+
+        <RadioGroup
+            android:id="@+id/cityRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/genderTv"
+            android:orientation="horizontal"
+            android:layout_below="@id/genderRadio">
+            <RadioButton
+                android:id="@+id/seoulRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:checked="true"
+                android:text="SEOUL"/>
+
+            <RadioButton
+                android:id="@+id/busanRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BUSAN"/>
+
+            <RadioButton
+                android:id="@+id/etcRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ETC"/>
+        </RadioGroup>
+
+<!--        전화번호        -->
+        <TextView
+            android:id="@+id/phoneTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_alignRight="@id/nameTv"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/cityTv"
+            android:text="PHONE : "/>
+
+        <EditText
+            android:id="@+id/phoneEdit1"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cityRadio"
+            android:inputType="phone"
+            android:maxLength="3"
+            android:layout_toRightOf="@id/phoneTv"/>
+
+        <EditText
+            android:id="@+id/phoneEdit2"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cityRadio"
+            android:inputType="phone"
+            android:maxLength="4"
+            android:layout_toRightOf="@id/phoneEdit1"/>
+
+        <EditText
+            android:id="@+id/phoneEdit3"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cityRadio"
+            android:inputType="phone"
+            android:maxLength="4"
+            android:layout_toRightOf="@id/phoneEdit2"/>
+    </RelativeLayout>
+
+
+
+
+
+    <!--  전화번호  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CHOICE CONTACT METHOD (MULTIPLE)"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:textSize="16sp"/>
+
+    <!--  체크박스 4개 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:weightSum="4">
+
+        <CheckBox
+            android:id="@+id/cbEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="E-MAIL"/>
+        <CheckBox
+            android:id="@+id/cbPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="PHONE"/>
+        <CheckBox
+            android:id="@+id/cbVisit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="VISIT"/>
+        <CheckBox
+            android:id="@+id/cbSMS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SMS"/>
+    </LinearLayout>
+
+    <!--  등록 버튼  -->
+    <Button
+        android:id="@+id/resistBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="REGISTRATION"/>
+
+    <!--  멤버 리스트  -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MEMBER LIST"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:padding="16dp"
+        android:background="#969ECA"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#C1C6DF"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"/>
+    </ScrollView>
+
+</LinearLayout>
