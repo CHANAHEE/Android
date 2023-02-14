@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="25dp"
+        android:paddingRight="25dp"
+        android:paddingLeft="25dp"
+        android:paddingBottom="10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/mainProfile"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/thumb_moana" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/mainProfile"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="android"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="15sp"
+                android:text="Hello. How are you today?"/>
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2022.08.26"
+            android:textStyle="bold"
+            android:padding="4dp"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <HorizontalScrollView
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/moana01"
+                app:civ_border_width="1.5dp"
+                app:civ_border_color="#686565"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/moana02"
+                app:civ_border_width="1.5dp"
+                app:civ_border_color="#686565"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/moana03"
+                app:civ_border_width="1.5dp"
+                app:civ_border_color="#686565"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/moana04"
+                app:civ_border_width="1.5dp"
+                app:civ_border_color="#686565"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/moana05"
+                app:civ_border_width="1.5dp"
+                app:civ_border_color="#686565"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/moana01"
+                app:civ_border_width="1.5dp"
+                app:civ_border_color="#686565"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/moana02"
+                app:civ_border_width="1.5dp"
+                app:civ_border_color="#686565"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/moana03"
+                app:civ_border_width="1.5dp"
+                app:civ_border_color="#686565"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/moana04"
+                app:civ_border_width="1.5dp"
+                app:civ_border_color="#686565"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/moana05"
+                app:civ_border_width="1.5dp"
+                app:civ_border_color="#686565"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/moana01"
+                app:civ_border_width="1.5dp"
+                app:civ_border_color="#686565"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/moana02"
+                app:civ_border_width="1.5dp"
+                app:civ_border_color="#686565"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/moana03"
+                app:civ_border_width="1.5dp"
+                app:civ_border_color="#686565"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/moana04"
+                app:civ_border_width="1.5dp"
+                app:civ_border_color="#686565"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/moana05"
+                app:civ_border_width="1.5dp"
+                app:civ_border_color="#686565"/>
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#D8D8D8"/>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="20dp"
+                android:textStyle="bold"
+                android:textSize="10sp"
+                android:textColor="@color/black"
+                android:text="androidprimeinfo"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:text="Metro Manila, Philippines"/>
+
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/moreBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_more_vert_black_24dp"
+            android:backgroundTint="@color/white"
+            android:padding="15dp"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/mainImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/newyork"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/favoriteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:padding="10dp"
+            android:background="@color/white"
+            android:src="@drawable/baseline_favorite_black_24dp"/>
+        <ImageButton
+            android:id="@+id/chatBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/favoriteBtn"
+            android:padding="10dp"
+            android:background="@color/white"
+            android:src="@drawable/baseline_chat_bubble_outline_black_24dp"/>
+        <ImageButton
+            android:id="@+id/sendBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/chatBtn"
+            android:padding="10dp"
+            android:background="@color/white"
+            android:src="@drawable/baseline_send_black_24dp"/>
+        <ImageButton
+            android:id="@+id/downloadBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/baseline_move_to_24dp"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="2dp"
+        android:background="#EAEAEA"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Write your description here..."
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#000000"
+        android:textSize="15sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="26 MINUTES AGO"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="10sp"
+        android:textColor="#8C8686"/>
+
+</LinearLayout>

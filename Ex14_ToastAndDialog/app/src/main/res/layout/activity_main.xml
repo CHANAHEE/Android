@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!--  1_ 버튼 만들기 -->
+    <Button
+        android:id="@+id/btn01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="토스트 띄우기"
+        android:layout_gravity="center"/>
+
+    <!--  4_ 다이얼 로그 버튼만들기  -->
+    <Button
+        android:id="@+id/btn02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Dialog"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/teal_700"
+        android:layout_gravity="center"/>
+
+
+
+</LinearLayout>
