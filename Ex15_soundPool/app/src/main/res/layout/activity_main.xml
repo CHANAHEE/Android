@@ -8,32 +8,32 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="START"/>
+<Button
+    android:id="@+id/btn01"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="START"/>
 
-    <Button
-        android:id="@+id/btn02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
-        android:text="AGAIN"/>
+<Button
+    android:id="@+id/btn02"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/black"
+    android:text="AGAIN"/>
 
-    <Button
-        android:id="@+id/btn03"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/teal_700"
-        android:text="Good job"/>
+<Button
+    android:id="@+id/btn03"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/teal_700"
+    android:text="Good job"/>
 
-    <Button
-        android:id="@+id/btn04"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="긴 음원 플레이"
-        android:backgroundTint="#FF8809"/>
+<Button
+    android:id="@+id/btn04"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="긴 음원 플레이"
+    android:backgroundTint="#FF8809"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="50dp"

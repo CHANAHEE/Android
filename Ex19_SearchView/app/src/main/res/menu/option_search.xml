@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/menu_search"
+        android:title="SEARCH"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always"/>
+    <!-- 5_ 보여주는 작업은 다 했으니, 이제 완료버튼을 눌렀을 때 어떻게 해야하는지 자바로 작성해보자.  -->
+</menu>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_share"
+        android:title="share"
+        android:icon="@drawable/ic_action_share"
+        />
+    <!--  7_ 액션모드는 icon 이 우선됨. 그래서 showAsAction 이 필요없음  :  never 가 안됨. 오버플로가 없다. 그니까 오버플로를 쓸꺼면 액션모드를 사용하지 말라는 이야기 -->
+
+    <item android:id="@+id/menu_map"
+        android:title="map"
+        android:icon="@drawable/ic_action_map"/>
+</menu>

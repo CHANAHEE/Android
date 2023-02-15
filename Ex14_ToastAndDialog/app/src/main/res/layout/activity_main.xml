@@ -9,12 +9,12 @@
     tools:context=".MainActivity">
 
     <!--  1_ 버튼 만들기 -->
-    <Button
-        android:id="@+id/btn01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="토스트 띄우기"
-        android:layout_gravity="center"/>
+<!--    <Button-->
+<!--        android:id="@+id/btn01"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="토스트 띄우기"-->
+<!--        android:layout_gravity="center"/>-->
 
     <!--  4_ 다이얼 로그 버튼만들기  -->
     <Button

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--  타이틀은 필수 속성  , 사이즈가 정해져 있는건 이미지 어셋, 임의 사이즈는 벡터 어셋 -->
+    <item android:id="@+id/menu_action"
+        android:icon="@drawable/ic_action_name"
+        android:title="action"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionLayout="@layout/option_actionlayout"/>
+    <!--  coolapseActionView 는 항상 ifRoom 과 같이 써야함.  ifRoom 이 아니면 오버플로에 숨어있기때문에.-->
+</menu>

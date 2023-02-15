@@ -41,18 +41,18 @@ public class MainActivity extends AppCompatActivity {
         btn03.setOnClickListener(listener );
         btn04.setOnClickListener(listener );
     }
-    View.OnClickListener listener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            if(view.getId() == btn01.getId()){
-                sp.play(sdStart,0.9f,0.9f,3, 0 ,1.0f);
-            }else if(view.getId() == btn02.getId()){
-                sp.play(sdAgain,0.8f,0.8f,2, 0 ,1.0f);
-            }else if(view.getId() == btn03.getId()){
-                sp.play(sdGoodJob,0.7f,0.7f,1, 0 ,1.0f);
-            } else {
-                sp.play(sdMusic, 0.7f,0.7f,4,0,1.0f);
-            }
+View.OnClickListener listener = new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        if(view.getId() == btn01.getId()){
+            sp.play(sdStart,0.9f,0.9f,3, 0 ,1.0f);
+        }else if(view.getId() == btn02.getId()){
+            sp.play(sdAgain,0.8f,0.8f,2, 0 ,1.0f);
+        }else if(view.getId() == btn03.getId()){
+            sp.play(sdGoodJob,0.7f,0.7f,1, 0 ,1.0f);
+        } else {
+            sp.play(sdMusic, 0.7f,0.7f,4,0,1.0f);
         }
-    };
+    }
+};
 }

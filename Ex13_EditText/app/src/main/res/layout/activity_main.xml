@@ -8,42 +8,42 @@
     tools:context=".MainActivity">
 
     <!--  1_ 힌트  3_ 키보드의 타입 지정 가능 : 이메일용(@), 패스워드, 텍스트, 대소문자 설정, 숫자 키패드(number) , 전화번호(phone) -->
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="input data"
-        android:textColorHint="#FF0000"
-        android:inputType="text"/> <!--  2_ 힌트색깔 지정 가능 - 글씨색과는 다른 개념임-->
+<!--<EditText-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:hint="input data"-->
+<!--    android:textColorHint="#FF0000"-->
+<!--    android:inputType="text"/> &lt;!&ndash;  2_ 힌트색깔 지정 가능 - 글씨색과는 다른 개념임&ndash;&gt;-->
 
 
     <!--  4_  여러줄 입력 : lines , maxLines-->
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:lines="3"
-        android:gravity="top"/> <!--  그래비티를 top 으로 해줘야 위에서 부터 써내려져 올 수 있다.-->
+<!--<EditText-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:inputType="textMultiLine"-->
+<!--    android:lines="3"-->
+<!--    android:gravity="top"/> &lt;!&ndash;  그래비티를 top 으로 해줘야 위에서 부터 써내려져 올 수 있다.&ndash;&gt;-->
 
-    <!--  5_ ems : 글자 수 만큼 뷰의 너비를 지정 , 너비를 지정하는것이지 글자수에 제한이 걸리는건 아님  -->
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="5"/>
+<!--      5_ ems : 글자 수 만큼 뷰의 너비를 지정 , 너비를 지정하는것이지 글자수에 제한이 걸리는건 아님  -->
+<!--<EditText-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:ems="5"/>-->
 
     <!--  6_  EditText 에 아이콘 이미지 지정 가능  -->
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableRight="@drawable/baseline_battery_charging_full_24"/>
+<!--    <EditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:drawableRight="@drawable/baseline_battery_charging_full_24"/>-->
 
-    <!--  7_  EditText 의 배경 지정  , 사용자는 얼마만큼의 텍스트를 입력할 수 있는지 모른다.  -->
-    <EditText
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:background="@drawable/bg_edit"
-        android:padding="8dp"
-        android:gravity="top"
-        android:inputType="textMultiLine"/>
+<!--    &lt;!&ndash;  7_  EditText 의 배경 지정  , 사용자는 얼마만큼의 텍스트를 입력할 수 있는지 모른다.  &ndash;&gt;-->
+<!--    <EditText-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:background="@drawable/bg_edit"-->
+<!--        android:padding="8dp"-->
+<!--        android:gravity="top"-->
+<!--        android:inputType="textMultiLine"/>-->
 
     <!--  8_ 전화번호 입력 (과제)  -->
     <LinearLayout

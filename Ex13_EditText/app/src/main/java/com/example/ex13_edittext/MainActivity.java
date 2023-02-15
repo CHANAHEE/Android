@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         et01.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+                if(et01.requestFocus()) et01.setText("555");
             }
 
             @Override
