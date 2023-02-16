@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"/>
+    <!--  3_ entries 는 xml 에 데이터를 만들었을 때만 사용이 가능하다.  -->
+    <!--  근데 게시글을의 피드글과 같이 자주 바뀌는 데이터들은 xml 로 만들기 까다롭다.  -->
+    <!--  그래서 entries 는 사용하지 못하므로, 자바로 만들어줘야 한다.  -->
+
+    <!--  5_ 자 그러면 우리는 대량의 데이터도 준비했고, 어댑터뷰의 일종인 리스트뷰도 준비했다 그러니, 이제 -->
+    <!--  아이템들의 레이아웃 시안을 짜서 어댑터에게 전달할 준비를 하자! -->
+
+    <!--  13_ 새로운 데이터 추가용 뷰를 만들어보자  -->
+    <!--  이제는 우리가 작성한 데이터를 리스트뷰에 추가시켜볼꺼다. 즉, 데이터의 개수를 변경시켜보자. -->
+    <EditText
+        android:id="@+id/et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="new data"
+        android:inputType="text"
+        android:layout_marginTop="25dp"/>
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ADD"/>
+</LinearLayout>

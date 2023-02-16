@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 // 5_ AlertDialog를 만들어주는 건축가(Builder) 객체를 생성하자.
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 //
+
 //                // 6_ 건축가에게 원하는 모양을 의뢰
 //                builder.setTitle("다 이얼로그");
 //                builder.setIcon(R.mipmap.ic_launcher);

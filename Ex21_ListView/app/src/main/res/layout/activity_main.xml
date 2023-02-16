@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!--  1_ 목록형태의 리스트 뷰 생성  -->
+    <!--  프리뷰에 나온다고 해서 실행화면에서도 나오는건 아님.  -->
+    <!--  자 그러면 데이터를 가져와야겠지? 자바에서 하는게 아니라 value 폴더에 따로 arrays 를 만들어서 관리하자-->
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:entries="@array/datas"/>
+    <!--  3_ entries 을 사용하면 Adapter 를 자동으로 만들어서 리스트뷰에 표시해준다.  -->
+    <!-- 원래 리스트뷰는 문자나 이미지를 출력할 수 없다. 그런데 entries 속성만 사용해서 문자를 표시하니-->
+    <!--  데이터를 직접 건드리는것 같은 착각을 일으킨다. 그게 아니라 어댑터를 자동으로 생성해주는거임!!-->
+
+
+
+
+</RelativeLayout>

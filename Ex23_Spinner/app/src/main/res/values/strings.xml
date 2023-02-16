@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Ex23_Spinner</string>
+    <string name="dialog_name">도시이름</string>
+</resources>

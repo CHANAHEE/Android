@@ -22,9 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // 2_ menu 객체에게 MenuItem 객체를 추가하기
+        // 2_ Menu 객체에게 MenuItem 객체를 추가하기
         // 2_1 Java 언어로 추가해보기 : 아이콘이나 id 같은 식별자를 지정할 때 번거롭다! 특히 메뉴가 많아질때..!!
-        // menu.add("aa"); 그래서 이방법은 많이 사용하지 않는다.
+        // menu.add("aa"); // 그래서 이방법은 많이 사용하지 않는다.
+
 
         // 2_2 XML 언어로 menu 로 '설계'하고 객체로 만들어서 사용해보기
         // this.getSystemService(Context.) 이렇게 해야하나, 자주 사용되는 스머프들은 아래처럼 사용한다.

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- 1_ arrays.xml 을 만들어줬고 데이터가 문자열이기 때문에 entries 를 이용해서 스피너를 만들 수 있다! -->
+    <!-- 데이터가 몇개 없고 문자데이터라면 entries 을 쓰면 참 편리할듯-->
+<!--    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/city"/>-->
+
+    <!--  2_ entries 를 사용하지 않고 어댑터를 만들어서 사용해보자  -->
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:prompt="@string/dialog_name"
+        android:background="@drawable/bg_spinner"/>
+    <!--  8_ 스피너모드도 바꿀수 있다. 기본은 드롭다운.-->
+    <!--  9_ 프롬프트를 통해 다이얼로그의 제목을 지정해줄 수 있다.  -->
+    <!--  11_ 스피너 가로를 랩으로 설정해보자.-->
+    <!--  12_ 그런데 스피너 자체의 백그라운드로 모양을 설정해도 이쁘겠다! 설정해보자.  -->
+</RelativeLayout>

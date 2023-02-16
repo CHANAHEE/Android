@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+
+    <TextView
+        android:id="@+id/dialog_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAME :"
+        android:layout_alignRight="@id/dialog_gender"
+        android:textSize="20sp"
+        android:padding="8dp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/dialog_et"
+        android:layout_toRightOf="@id/dialog_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"/>
+
+
+
+    <TextView
+        android:id="@+id/dialog_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GENDER :"
+        android:layout_below="@id/dialog_name"
+        android:textSize="20sp"
+        android:padding="8dp"
+        android:textStyle="bold"/>
+
+    <RadioGroup
+        android:id="@+id/dialog_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/dialog_gender"
+        android:layout_below="@id/dialog_name"
+        android:orientation="horizontal">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:textSize="17sp"
+            android:text="MALE"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:text="FEMALE"/>
+    </RadioGroup>
+
+
+
+
+    <TextView
+        android:id="@+id/nation_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NATION :"
+        android:layout_alignRight="@id/dialog_gender"
+        android:layout_below="@id/dialog_gender"
+        android:textSize="20sp"
+        android:padding="8dp"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:id="@+id/dialog_nation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/nation_tv"
+        android:layout_below="@id/dialog_gender"
+        android:padding="10sp"
+        android:textAlignment="textStart"
+        android:entries="@array/nation"
+        android:drawableRight="@drawable/baseline_arrow_drop_down_24"
+        />
+
+
+    <Button
+        android:id="@+id/addBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ADD"
+        android:layout_below="@id/nation_tv"
+        android:gravity="center"/>
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CANCEL"
+        android:layout_below="@id/addBtn"
+        android:gravity="center"/>
+</RelativeLayout>

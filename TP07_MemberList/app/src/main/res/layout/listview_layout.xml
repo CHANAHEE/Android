@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/name_listview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="SAM"
+        />
+    <TextView
+        android:id="@+id/nation_listview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="CHINA"
+        android:layout_marginLeft="20dp"
+        android:padding="3dp"
+        android:layout_toRightOf="@id/name_listview"
+        android:layout_alignBottom="@id/name_listview"
+        />
+    <ImageView
+        android:id="@+id/flag_listview"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/flag_korea"
+        android:layout_alignParentRight="true"/>
+
+    <ImageView
+        android:id="@+id/profile_listview"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/flag_listview"
+        android:src="@drawable/flag_korea"/>
+
+    <TextView
+        android:id="@+id/current_time"
+        android:layout_below="@id/profile_listview"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
