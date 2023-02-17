@@ -33,23 +33,23 @@
     <!-- 4_4 배경색상은 View 에도 있는 속성! 즉, 뷰라면 모두 가지고 있는 속성-->
     <!-- 4_5 뷰와 뷰 사이의 거리는 margin , 뷰 와 안쪽의 컨텐츠사이의 거리 padding 이 속성은 View 의 속성이다!-->
 
-    <LinearLayout
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    android:background="@color/teal_700">
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:background="@color/teal_700">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/brand_name"
-            android:textSize="50sp"
-            android:textStyle="normal"
-            android:padding="16dp"
-            android:layout_gravity="center"
-            android:background="#AF0000"
-            android:visibility="visible"/>
+        android:layout_height="wrap_content"
+        android:text="@string/brand_name"
+        android:textSize="50sp"
+        android:textStyle="normal"
+        android:padding="16dp"
+        android:gravity="center"
+        android:background="#AF0000"
+        android:visibility="visible"/>
 
 
-    </LinearLayout>
+</LinearLayout>
 
 
 

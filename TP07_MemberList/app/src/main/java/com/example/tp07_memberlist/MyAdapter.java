@@ -46,11 +46,13 @@ public class MyAdapter extends BaseAdapter {
         ImageView profile = view.findViewById(R.id.profile_listview);
         TextView name = view.findViewById(R.id.name_listview);
         TextView nation = view.findViewById(R.id.nation_listview);
+        TextView time = view.findViewById(R.id.current_time);
 
         flag.setImageResource(item.flag);
         profile.setImageResource(item.profile);
         name.setText(item.name);
         nation.setText(item.nation);
+        time.setText(item.date);
 
         return view;
     }

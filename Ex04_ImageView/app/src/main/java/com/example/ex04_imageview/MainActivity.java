@@ -30,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
         btn04.setOnClickListener(listener);
 
         // 9_ 이미지뷰를 차례대로 변경
-        iv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                iv.setImageResource(R.drawable.flag_korea);
-            }
-        });
+//        iv.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                iv.setImageResource(R.drawable.flag_belgium);
+//            }
+//        });
     }
     View.OnClickListener listener = new View.OnClickListener() {
         @Override
