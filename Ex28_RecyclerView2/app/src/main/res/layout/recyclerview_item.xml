@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+6_ 리사이클러뷰의 아이템 뷰 설정
+-->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_profile"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/crew_luffy"/>
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/civ_profile"
+            android:layout_alignTop="@id/civ_profile"
+            android:text="루피"/>
+        <TextView
+            android:id="@+id/role_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_tv"
+            android:layout_alignLeft="@id/name_tv"
+            android:text="해적단의 선장"/>
+
+        <ImageView
+            android:id="@+id/img_iv"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_below="@id/civ_profile"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/bg_one01"
+            android:scaleType="fitXY"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

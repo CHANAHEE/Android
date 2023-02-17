@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!--  1_ ListView 와 GridView 의 개량형 AdapterView  -->
+    <!--  2_ 그래서 layoutManager 를 통해 어떤 모양으로 설계할지를 정해줘야한다.  -->
+    <!--  3_ 매니저를 안쓰면 오류표시는 안난다... 근데 화면에 표시도 안된다... 조심하자 ... -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"/>
+</RelativeLayout>

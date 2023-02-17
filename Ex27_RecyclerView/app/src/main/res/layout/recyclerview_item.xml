@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  7_ 리사이클러뷰의 아이템의 모양을 잡아주는 xml 파일을 만들자. 그리고 카드뷰 사용해보자!-->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:contentPadding="16dp"
+    app:cardElevation="10dp"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="8dp">
+    <!--  8_ 카드뷰는 그냥 패딩을 쓰면 안되고, contentPadding 을 사용해주어야 함.  -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/recycler_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="name"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/recycler_item_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text ="This is message"
+            android:background="@color/teal_700"
+            android:textColor="@color/white"
+            android:layout_below="@id/recycler_item_name"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

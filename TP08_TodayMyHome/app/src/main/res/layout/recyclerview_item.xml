@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="8dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/card"
+        app:cardCornerRadius="7dp">
+
+        <ImageView
+            android:id="@+id/rcv_mainImg"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/images"
+            android:scaleType="centerCrop"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <ImageView
+        android:id="@+id/rcv_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:src="@drawable/ic_action_name" />
+
+    <ImageButton
+        android:id="@+id/rcv_bookMark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/card"
+        android:layout_alignBottom="@id/card"
+        android:layout_margin="7dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/ic_action_bookmark"/>
+
+    <TextView
+        android:id="@+id/rcv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/card"
+        android:textSize="10sp"
+        android:layout_marginTop="10dp"
+        android:text="전문가 집들이"/>
+
+    <TextView
+        android:id="@+id/rcv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비우고 정리한 자리에 더 넓은 공간감 채우기"
+        android:layout_below="@id/rcv_category"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="12sp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/rcv_civ_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/rcv_title"/>
+
+    <TextView
+        android:id="@+id/rcv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="그안에 디자인"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        android:textSize="10sp"
+        android:layout_toRightOf="@id/rcv_civ_icon"
+        android:layout_below="@id/rcv_title"/>
+
+    <TextView
+        android:id="@+id/rcv_scrap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="10sp"
+        android:layout_below="@id/rcv_civ_icon"
+        android:text="스크랩 0"/>
+
+    <TextView
+        android:id="@+id/rcv_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="10sp"
+        android:layout_below="@id/rcv_civ_icon"
+        android:layout_toRightOf="@id/rcv_scrap"
+        android:text="조회수 0"/>
+</RelativeLayout>
