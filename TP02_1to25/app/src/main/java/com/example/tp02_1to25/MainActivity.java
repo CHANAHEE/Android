@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         tv = findViewById(R.id.tv);
+        retryBtn = findViewById(R.id.retryBtn);
+
         ArrayList<Integer> nums = new ArrayList<>();
         for(int n = 1; n<=25 ; n++) nums.add(n);
         Collections.shuffle(nums);
@@ -68,13 +70,20 @@ public class MainActivity extends AppCompatActivity {
 //            int n = Integer.parseInt(s);
 
             // 버튼뷰에 저장된 Tag 값을 읽어와서 num 과 같은지 비교 이미지 등을 활용할 때 이렇게 쓸 수 있음.
+            if(view.getId() == R.id.retryBtn){
+                retryBtn.setVisibility(View.INVISIBLE);
+                num = 1;
+                tv.setText(num + "");
+            }
+
+            String str = ((Button)view).getText().toString();
             String s= view.getTag().toString();
-            int n = Integer.parseInt(s);
+            int n = Integer.parseInt(str);
             Button btn = (Button) view;
             if(n == num){
                 btn.setText("OK");
                 btn.setTextColor(Color.parseColor("#FF0000"));
-                btn.setBackground(null); // 버튼은 배경이 그림임.(그림을 없앤것임)
+                btn.setBackgroundColor(Color.parseColor("#FFFFFF")); // 버튼은 배경이 그림임.(그림을 없앤것임)
 
                 num++;
                 tv.setText(num+"");
@@ -85,6 +94,13 @@ public class MainActivity extends AppCompatActivity {
                 tv.setText("STAGE CLEAR");
                 retryBtn.setVisibility(View.VISIBLE);
             }
+
+        }
+    };
+
+    View.OnClickListener listener2 = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
 
         }
     };

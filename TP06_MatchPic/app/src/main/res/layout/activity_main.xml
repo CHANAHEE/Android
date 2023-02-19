@@ -31,6 +31,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="400dp">
+
         <ImageButton
             android:id="@+id/image_monkey"
             android:layout_width="150dp"
@@ -61,6 +62,14 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:background="@drawable/a_ele"/>
+
+        <ImageView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/button_start"
+            android:visibility="invisible"/>
     </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
