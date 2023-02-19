@@ -101,46 +101,39 @@ public class MainActivity extends AppCompatActivity {
     // strike, ball, out 을 체크해서 화면에 표시, 승리 조건인지 판단, round 수 갱신
     public void inputNumber(){
 
-        try {
-            String s1 = num1.getText().toString();
-            int n100 = Integer.parseInt(s1);
 
-            String s2 = num2.getText().toString();
-            int n10 = Integer.parseInt(s2);
+        String s1 = num1.getText().toString();
+        int n100 = Integer.parseInt(s1);
 
-            String s3 = num3.getText().toString();
-            int n1 = Integer.parseInt(s3);
+        String s2 = num2.getText().toString();
+        int n10 = Integer.parseInt(s2);
+
+        String s3 = num3.getText().toString();
+        int n1 = Integer.parseInt(s3);
 
 
-            if(n100 == answer100) strikeNum++;
-            else if(n100 == answer10) ballNum++;
-            else if(n100 == answer1) ballNum++;
-            else outNum++;
+        if(n100 == answer100) strikeNum++;
+        else if(n100 == answer10) ballNum++;
+        else if(n100 == answer1) ballNum++;
+        else outNum++;
 
-            if(n10 == answer100) ballNum++;
-            else if(n10 == answer10) strikeNum++;
-            else if(n10 == answer1) ballNum++;
-            else outNum++;
+        if(n10 == answer100) ballNum++;
+        else if(n10 == answer10) strikeNum++;
+        else if(n10 == answer1) ballNum++;
+        else outNum++;
 
-            if(n1 == answer100) ballNum++;
-            else if(n1 == answer10) ballNum++;
-            else if(n1 == answer1) strikeNum++;
-            else outNum++;
+        if(n1 == answer100) ballNum++;
+        else if(n1 == answer10) ballNum++;
+        else if(n1 == answer1) strikeNum++;
+        else outNum++;
 
-        }catch (Exception e){
-            if(roundCount != 0) roundCount--;
-            Toast.makeText(getApplicationContext(),"숫자를 입력해주세요",Toast.LENGTH_SHORT).show();
-        }
         strike.setText(String.valueOf(strikeNum));
         ball.setText(String.valueOf(ballNum));
         out.setText(String.valueOf(outNum));
 
         homeRun();
 
-        if(strikeNum != 3) {
-            roundCount++;
-            round.setText(roundCount + "");
-        }
+
     }
 
     // 승리 조건 판단 . 3 strike 이면 승리. 승리시, 다시하기 버튼 활성화와, success 출력 및 버튼 선택 불가
@@ -163,7 +156,9 @@ public class MainActivity extends AppCompatActivity {
         ball.setTextColor(Color.parseColor("#668A3C"));
         // round 의 숫자를 기준으로, 9라운드까지는 왼쪽에, 18라운드까지는 오른쪽에, 그 이상은 화면 초기화 후 다시 처음부터 진행
         if(roundCount < 10) {
-            numResult += (roundCount-1) + "R  :  " + num1.getText().toString() + " " + num2.getText().toString() + " " + num3.getText().toString() + "\n";
+            numResult += (roundCount-1) + "R  :  " + num1.getText().toString()
+                    + " " + num2.getText().toString()
+                    + " " + num3.getText().toString() + "\n";
             ballResult += strikeNum + " S  " + ballNum + " B"+"\n";
             refResult1.setText(numResult);
             ballResult1.setText(ballResult);
@@ -172,7 +167,9 @@ public class MainActivity extends AppCompatActivity {
                 numResult = "";
                 ballResult = "";
             }
-            numResult += (roundCount-1) + "R  :  " + num1.getText().toString() + " " + num2.getText().toString() + " " + num3.getText().toString() + "\n";
+            numResult += (roundCount-1) + "R  :  " + num1.getText().toString()
+                    + " " + num2.getText().toString() + " "
+                    + num3.getText().toString() + "\n";
             ballResult += strikeNum + " S  " + ballNum + " B"+"\n";
             refResult2.setText(numResult);
             ballResult2.setText(ballResult);
@@ -185,7 +182,9 @@ public class MainActivity extends AppCompatActivity {
                 ballResult1.setText("");
                 ballResult2.setText("");
             }
-            numResult += (roundCount-1) + "R  :  " + num1.getText().toString() + " " + num2.getText().toString() + " " + num3.getText().toString() + "\n";
+            numResult += (roundCount-1) + "R  :  " + num1.getText().toString()
+                    + " " + num2.getText().toString() + " "
+                    + num3.getText().toString() + "\n";
             ballResult += strikeNum + " S  " + ballNum + " B"+"\n";
             refResult1.setText(numResult);
             ballResult1.setText(ballResult);
@@ -194,6 +193,10 @@ public class MainActivity extends AppCompatActivity {
     // round 가 달라질때, 선택결과 숫자, 버튼, 선택 결과와 정답을 비교한 s,b,o 을 초기화
     public void init(){
 
+        if(strikeNum != 3) {
+            roundCount++;
+            round.setText(roundCount + "");
+        }
 
         // 버튼 초기화
         if(strikeNum != 3) {
@@ -215,7 +218,6 @@ public class MainActivity extends AppCompatActivity {
         strikeNum = 0;
         ballNum = 0;
         outNum = 0;
-
     }
     // 버튼 select 여부를 확인하여, select 되어있으면, select 을 취소 하고 버튼색, 글씨색을 원래대로 바꾸고, 선택 숫자를 지운다.
     // select 이 안되어있으면 버튼색, 글씨색을 바꾸고, 선택숫자에 기입한다. select 여부를 true 로 바꾼다.
@@ -248,8 +250,6 @@ public class MainActivity extends AppCompatActivity {
         if(count == 3){
             for(int i = 0; i < 10; i++){
                 btnArr[i].setSelected(false);
-                btnArr[i].setBackgroundColor(Color.parseColor("#FF555950"));
-                btnArr[i].setTextColor(Color.parseColor("#FF2C2B2B"));
             }
 
             inputNumber();

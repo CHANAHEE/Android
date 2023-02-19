@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
                         // 9_ 액션모드의 배경색은 테마에서 지정
 
-                        return true; // 리턴값이 true 여야만 액션모드가 발동함. 
+                        return true; // 리턴값이 true 여야만 액션모드가 발동함.
                     }
 
                     @Override

@@ -69,8 +69,10 @@ public class MainActivity extends AppCompatActivity {
         // 22_ 아이템 리스트에서 첫번째 데이터를 제거
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view){
+                items.remove(0);
             }
+
         });
 
         // 23_ 리사이클러뷰의 레이아웃 매니저를 새로이 선정
