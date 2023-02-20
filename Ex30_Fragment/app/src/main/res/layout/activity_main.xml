@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- 1_ 텍스트뷰와 버튼 만들기  -->
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:padding="6dp"
+        android:text="TextView inside MainActivity"/>
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="change text"/>
+
+    <!--  14_ 프래그먼트 안에서 메인액티비티의 뷰를 건드릴수 있었으니.. 반대도 가능하지않을까?  -->
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF0000"
+        android:text="change text for Fragment"/>
+    <!--  9_ 프래그먼트로 화면 일부분 만들기 : XML 에 붙이기 -->
+    <!-- 11- 미리보기가 원래 안되는데, layout 속성을 이용하면 미리보기가 가능하다!!  -->
+    <fragment
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.example.ex30_fragment.MyFragment"
+        tools:layout="@layout/fragment_my"/>
+    <!-- 20_ 이런식으로 프래그먼트를 xml 에 직접 붙이게 되면 붙이는 작업은 쉽다. 하지만, 떼어낼 수가 없다.
+    즉, 동적제어(add , remove, replace )가 불가능해진다!! 그러니.. 탭을 활용하는것도 힘들겠지..  -->
+    <!-- 21_ 그래서 보통 자바로 프래그먼트를 붙인다. 다음 실습에서는 버튼을 누르면 프래그먼트가 붙여지는 예제를 해보자.-->
+
+</LinearLayout>
