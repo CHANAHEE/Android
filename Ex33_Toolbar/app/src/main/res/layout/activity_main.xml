@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!--  1_ 먼저 테마(theme.xml)부터 건드려야 한다. 기존 액션바를 제거하자.  -->
+
+    <!--  2_ ActionBar 대체 뷰  -->
+    <!--  3_ 이 툴바를 사용하려면, 자바에서 액션바로 설정해주어야만 한다!  -->
+<!--    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/purple_500"
+        app:titleTextColor="@color/white"/>-->
+    <!--  10_ titleTextColor 는 제목줄의 글씨색을 바꿔준다.  단, 옵션메뉴의 색은바뀌지 않는다.  -->
+
+    <!--  12_ 툴바역시 view 이기 때문에 액션바와는 달리 속성들을 이용이 가능하다.-->
+    <!--  색깔, 드로어블 등도 이용할 수 있으며, 레이아웃에 따라 배치도 바꿔줄 수 있다.  -->
+
+
+    <!--  13_ 새로운 툴바 만들고, 제목글씨 가운데 배치하기 -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_actionbar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/billabong"
+            android:text="Instagram"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+  </RelativeLayout>

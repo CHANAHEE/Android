@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--  2_ 핸드폰의 설정값은 ? 로 설정하자!  -->
+        <!--  4_ 그리고 뭐 서브타이틀이나 로고 같은 설정도 확인해보자.-->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/white"
+            app:logo="@drawable/ic_action_logo"
+            app:titleMarginStart="30dp"
+            app:subtitle="This is subTitle"
+            app:subtitleTextColor="#FFFFFF"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            app:tabTextColor="@color/white"
+            app:tabSelectedTextColor="#A8A8A8"
+            app:tabIndicatorColor="@color/white"
+            app:tabIndicatorHeight="4dp"
+            app:tabIndicatorFullWidth="false"
+            app:tabMode="scrollable"/> <!--  탭이 많을 때 스크롤로 넘어갈수 있다.  -->
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!--  1_ 콘텐츠 영역 -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
