@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         // 5_ 툴바를 찾아와서 액션바로 설정
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         // 6_ 이렇게 해주면 제목줄로 대체된것을 볼 수 있다.
 
 

@@ -1,0 +1,30 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.CollapsingToolbarLayout" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+
+
+    </style>
+
+    <!--  앱바 레이아웃만의 스타일 테마를 만들자  -->
+    <style name="appbar">
+        <!--  툴바만 있었을때 제목 색상을 지정해보자  -->
+        <item name="titleTextColor">@color/white</item>
+
+        <!--  앱바 레이아웃안에 툴바를 넣었을 때 제목색상 지정 -->
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="colorControlNormal">@color/white</item>
+
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>

@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     GridView gridView;
     ArrayAdapter adapter;
+
     ArrayList<String> arrayList = new ArrayList<>();
 
 

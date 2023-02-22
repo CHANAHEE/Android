@@ -12,12 +12,12 @@
 
     <!--  2_ ActionBar 대체 뷰  -->
     <!--  3_ 이 툴바를 사용하려면, 자바에서 액션바로 설정해주어야만 한다!  -->
-<!--    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@color/purple_500"
-        app:titleTextColor="@color/white"/>-->
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="56dp"-->
+<!--        android:background="@color/purple_500"-->
+<!--        app:titleTextColor="@color/white"/>-->
     <!--  10_ titleTextColor 는 제목줄의 글씨색을 바꿔준다.  단, 옵션메뉴의 색은바뀌지 않는다.  -->
 
     <!--  12_ 툴바역시 view 이기 때문에 액션바와는 달리 속성들을 이용이 가능하다.-->
@@ -29,10 +29,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_margin="16dp"
         android:background="@drawable/bg_actionbar">
 
         <TextView
