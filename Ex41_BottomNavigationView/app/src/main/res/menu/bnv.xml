@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--  3_ BottomNavigationView 는 최대 5개까지만 메뉴아이템이 가능하다! -->
+    <!--  권장하는 아이템의 개수는 3~5개 , 2개 이내일때는 TabLayout을 사용해라!  -->
+    <item android:id="@+id/bnv_tab1"
+        android:title="TAB1"
+        android:icon="@drawable/ic_action_home"/>
+    <item android:id="@+id/bnv_tab2"
+        android:title="TAB2"
+        android:icon="@drawable/ic_action_favorite"/>
+    <item android:id="@+id/bnv_tab3"
+        android:title="TAB3"
+        android:icon="@drawable/ic_action_user"/>
+</menu>
