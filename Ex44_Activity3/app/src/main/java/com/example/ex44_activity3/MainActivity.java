@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, SecondActivity.class);
             launcher.launch(intent); // 그냥 start .. 하면 갔다가 안돌아온다. 그래서 대행사를 통해 보내야 다시 돌아온다.
         });
-
     }
 
     // 2_ 인텐트의 작업을 대신 해줄 수있는 하청업체 객체를 생성하자.

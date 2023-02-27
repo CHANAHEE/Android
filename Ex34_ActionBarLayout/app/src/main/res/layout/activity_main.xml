@@ -28,13 +28,14 @@
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/black"
-            app:tabTextColor="@color/white"
+            android:background="@color/white"
+            app:tabTextColor="@color/black"
             app:tabSelectedTextColor="#A8A8A8"
-            app:tabIndicatorColor="@color/white"
+            app:tabIndicatorColor="@color/black"
             app:tabIndicatorHeight="4dp"
             app:tabIndicatorFullWidth="false"
-            app:tabMode="scrollable"/> <!--  탭이 많을 때 스크롤로 넘어갈수 있다.  -->
+            app:tabMode="scrollable"
+            /> <!--  탭이 많을 때 스크롤로 넘어갈수 있다.  -->
     </com.google.android.material.appbar.AppBarLayout>
 
     <!--  1_ 콘텐츠 영역 -->

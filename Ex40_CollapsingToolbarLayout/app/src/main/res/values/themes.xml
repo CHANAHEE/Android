@@ -24,7 +24,6 @@
         <!--  앱바 레이아웃안에 툴바를 넣었을 때 제목색상 지정 -->
         <item name="android:textColorPrimary">@color/white</item>
         <item name="colorControlNormal">@color/white</item>
-
         <item name="android:textColor">@color/black</item>
     </style>
 </resources>

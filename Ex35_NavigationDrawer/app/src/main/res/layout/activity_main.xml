@@ -19,32 +19,34 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!--  서랍 레이아웃-->
+    <!--  서랍 레이아웃  -->
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <!--  드로어레이아웃은 두개만 가져야 한다. -->
-        <!--  1. 콘텐츠 영역  -->
 
+        <!-- 1. 콘텐츠 영역  -->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hello"/>
+                android:text="Hello android"
+                android:textColor="@color/black"/>
+
         </RelativeLayout>
-        <!--  2. 왼쪽에 숨어있는 Drawer  레이아웃  -->
-        <!--  그냥 뷰를 추가하면 콘텐츠 영역이랑 겹친다. 레이아웃 그래비티를 left 속성으로 지정해주어야 한다.-->
+
+        <!-- 2. 왼쪽에 숨어있는 Drawer 레이아웃 -->
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/nav"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            app:headerLayout=""
-            app:menu=""/>
-        <!--  일본, 아랍등은 글자를 오른쪽부터 쓴다. 그래서 start 를쓰면 그부분을 알아서 판단한다. 그래서 start 를 권장한다. -->
+            app:headerLayout="@layout/drawer_header"
+            app:menu="@menu/nav"/>
 
     </androidx.drawerlayout.widget.DrawerLayout>
 

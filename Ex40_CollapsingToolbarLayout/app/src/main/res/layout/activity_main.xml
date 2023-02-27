@@ -12,12 +12,17 @@
         android:layout_height="340dp"
         android:theme="@style/appbar">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="HELLO"
+            app:layout_scrollFlags="scroll"/>
 
+        <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:contentScrim="@color/purple_500">
+            app:contentScrim="@color/teal_700">
 
             <ImageView
                 android:layout_width="match_parent"

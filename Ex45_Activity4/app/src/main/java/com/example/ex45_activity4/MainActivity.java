@@ -24,9 +24,10 @@ public class MainActivity extends AppCompatActivity {
             // 3_ 묵시적 인텐트 만들기
             Intent intent = new Intent();
             //intent.setAction("aaaa");
-            intent.setAction("bbbb"); // 메니페스트의 속성인 action 을 여러개 줄 수도 있음.
+            intent.setAction("aaaa"); // 메니페스트의 속성인 action 을 여러개 줄 수도 있음.
             // 명시적 인텐트를 사용하려면 같은 앱 내부에서만 사용이 가능하다.
-            // 다른 사람이 만든 앱을 사용하려면 묵시적 인텐트를 사용해주어야 한다!!! 
+            // 다른 사람이 만든 앱을 사용하려면 묵시적 인텐트를 사용해주어야 한다!!!
+            startActivity(intent);
         });
     }
 }

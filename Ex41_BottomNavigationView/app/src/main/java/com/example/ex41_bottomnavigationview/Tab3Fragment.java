@@ -27,17 +27,17 @@ public class Tab3Fragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        items.add(new Tab3RecyclerViewItem("BLACK", Color.BLACK));
-        items.add(new Tab3RecyclerViewItem("BLUE", Color.BLUE));
-        items.add(new Tab3RecyclerViewItem("RED", Color.RED));
+        items.add(new Tab3RecyclerViewItem("BLACK", R.drawable.ic_action_favorite));
+        items.add(new Tab3RecyclerViewItem("BLUE", R.drawable.ic_action_favorite));
+        items.add(new Tab3RecyclerViewItem("RED", R.drawable.ic_action_favorite));
 
-        items2.add(new Tab3RecyclerViewItem("BLACK", Color.BLACK));
-        items2.add(new Tab3RecyclerViewItem("BLUE", Color.BLUE));
-        items2.add(new Tab3RecyclerViewItem("RED", Color.RED));
+        items2.add(new Tab3RecyclerViewItem("BLACK", R.drawable.ic_action_favorite));
+        items2.add(new Tab3RecyclerViewItem("BLUE", R.drawable.ic_action_favorite));
+        items2.add(new Tab3RecyclerViewItem("RED", R.drawable.ic_action_favorite));
 
-        items3.add(new Tab3RecyclerViewItem("BLACK", Color.BLACK));
-        items3.add(new Tab3RecyclerViewItem("BLUE", Color.BLUE));
-        items3.add(new Tab3RecyclerViewItem("RED", Color.RED));
+        items3.add(new Tab3RecyclerViewItem("BLACK", R.drawable.ic_action_favorite));
+        items3.add(new Tab3RecyclerViewItem("BLUE", R.drawable.ic_action_favorite));
+        items3.add(new Tab3RecyclerViewItem("RED", R.drawable.ic_action_favorite));
     }
 
     @Nullable
@@ -54,12 +54,12 @@ public class Tab3Fragment extends Fragment {
         adapter = new Tab3RecyclerAdapter(items,getActivity());
         recyclerView.setAdapter(adapter);
 
-//        recyclerView2 = view.findViewById(R.id.recyclerview2);
-//        adapter2 = new Tab3RecyclerAdapter(items,getActivity());
-//        recyclerView2.setAdapter(adapter2);
-//
-//        recyclerView3 = view.findViewById(R.id.recyclerview3);
-//        adapter3 = new Tab3RecyclerAdapter(items,getActivity());
-//        recyclerView3.setAdapter(adapter3);
+        recyclerView2 = view.findViewById(R.id.recyclerview2);
+        adapter2 = new Tab3RecyclerAdapter(items,getActivity());
+        recyclerView2.setAdapter(adapter2);
+
+        recyclerView3 = view.findViewById(R.id.recyclerview3);
+        adapter3 = new Tab3RecyclerAdapter(items,getActivity());
+        recyclerView3.setAdapter(adapter3);
     }
 }
