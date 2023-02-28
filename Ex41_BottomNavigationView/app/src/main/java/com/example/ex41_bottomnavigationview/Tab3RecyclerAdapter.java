@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,6 +36,7 @@ public class Tab3RecyclerAdapter extends RecyclerView.Adapter<Tab3RecyclerAdapte
         Tab3RecyclerViewItem item = items.get(position);
         holder.iv.setImageResource(item.img);
         holder.tv.setText(item.name);
+        Toast.makeText(context, items.size()+"", Toast.LENGTH_SHORT).show();
     }
 
     @Override
