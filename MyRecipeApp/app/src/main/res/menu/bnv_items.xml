@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/recipes_tab1"
+        android:title="내 냉장고"
+        android:icon="@drawable/house_outline"/>
+
+    <item android:id="@+id/bookmark_tab2"
+        android:title="레시피 북마크"
+        android:iconTint="@color/teal_700"
+        android:icon="@drawable/save"/>
+</menu>

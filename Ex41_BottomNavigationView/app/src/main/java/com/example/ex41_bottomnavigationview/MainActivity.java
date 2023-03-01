@@ -33,9 +33,17 @@ public class MainActivity extends AppCompatActivity {
         bnv.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if(item.getItemId() == R.id.bnv_tab1) getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment,fragments[0]).commit();
-                else if(item.getItemId() == R.id.bnv_tab2) getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment,fragments[1]).commit();
-                else if(item.getItemId() == R.id.bnv_tab3) getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment,fragments[2]).commit();
+                if(item.getItemId() == R.id.bnv_tab1) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment,fragments[0]).commit();
+                }
+                else if(item.getItemId() == R.id.bnv_tab2) {
+                    getSupportFragmentManager().beginTransaction().remove(fragments[1]);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment,fragments[1]);
+                }
+                else if(item.getItemId() == R.id.bnv_tab3) {
+                    getSupportFragmentManager().beginTransaction().remove(fragments[2]);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment,fragments[2]).commit();
+                }
 
                 // return true; 로 하지 않으면 탭이 변경되는 UI 가 반영되지 않음.
                 return true;

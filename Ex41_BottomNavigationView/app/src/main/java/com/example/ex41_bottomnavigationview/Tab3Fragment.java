@@ -27,6 +27,7 @@ public class Tab3Fragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+<<<<<<< HEAD
         items.add(new Tab3RecyclerViewItem("BLACK", R.drawable.ic_action_favorite));
         items.add(new Tab3RecyclerViewItem("BLUE", R.drawable.ic_action_favorite));
         items.add(new Tab3RecyclerViewItem("RED", R.drawable.ic_action_favorite));
@@ -38,6 +39,11 @@ public class Tab3Fragment extends Fragment {
         items3.add(new Tab3RecyclerViewItem("BLACK", R.drawable.ic_action_favorite));
         items3.add(new Tab3RecyclerViewItem("BLUE", R.drawable.ic_action_favorite));
         items3.add(new Tab3RecyclerViewItem("RED", R.drawable.ic_action_favorite));
+=======
+        items.add(new Tab3RecyclerViewItem("BLACK", R.drawable.ic_action_home));
+
+
+>>>>>>> 036cd00ce6ba9ce2e83e03d3c27ad85ab3012133
     }
 
     @Nullable
