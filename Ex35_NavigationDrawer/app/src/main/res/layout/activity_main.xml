@@ -45,8 +45,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
+<<<<<<< HEAD
             app:headerLayout="@layout/drawer_header"
             app:menu="@menu/nav"/>
+=======
+            app:headerLayout="@layout/navi_header"
+            app:menu="@menu/navi_menu"/>
+        <!--  일본, 아랍등은 글자를 오른쪽부터 쓴다. 그래서 start 를쓰면 그부분을 알아서 판단한다. 그래서 start 를 권장한다. -->
+>>>>>>> 3d534c718df123c62540a10bb7cfee1a38c09c37
 
     </androidx.drawerlayout.widget.DrawerLayout>
 

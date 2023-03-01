@@ -26,9 +26,6 @@
         <!--  5_ 안드로이드의 4대 컴포넌트는 반드시 등록해야 함  -->
         <!--  exported 는 외부에서 직접 접근이 가능한지의 여부를 결정하는 속성  -->
         <activity android:name=".SecondActivity" android:exported="false">
-
-
-
         </activity>
 
         <activity android:name=".ThirdActivity" android:exported="false">

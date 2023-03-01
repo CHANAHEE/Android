@@ -1,6 +1,9 @@
 package com.example.ex35_navigationdrawer;
 
+<<<<<<< HEAD
 import androidx.annotation.NonNull;
+=======
+>>>>>>> 3d534c718df123c62540a10bb7cfee1a38c09c37
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,15 +19,22 @@ import com.google.android.material.navigation.NavigationView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import com.google.android.material.navigation.NavigationView;
+
 public class MainActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+<<<<<<< HEAD
 
     ActionBarDrawerToggle drawerToggle;
 
     CircleImageView civ; //헤더뷰 안에 있는 둥근이미지뷰
 
+=======
+    ActionBarDrawerToggle drawerToggle;
+
+>>>>>>> 3d534c718df123c62540a10bb7cfee1a38c09c37
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar= findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+<<<<<<< HEAD
         drawerLayout= findViewById(R.id.drawer_layout);
         navigationView= findViewById(R.id.nav);
 
@@ -50,6 +61,18 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(drawerToggle);
 
         // NavigationView의 메뉴항목들을 선택했을때 반응하기
+=======
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav);
+
+        drawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+        drawerToggle.syncState();
+        drawerLayout.addDrawerListener(drawerToggle);
+>>>>>>> 3d534c718df123c62540a10bb7cfee1a38c09c37
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -68,11 +91,15 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
+<<<<<<< HEAD
                 // 드로우어 메뉴 닫기
+=======
+>>>>>>> 3d534c718df123c62540a10bb7cfee1a38c09c37
                 drawerLayout.closeDrawer(navigationView);
                 return false;
             }
         });
+<<<<<<< HEAD
 
 
         // NavigationView 안에 있는 HeaderView 안에 있는
@@ -85,5 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 civ.setImageResource(R.drawable.moana05);
             }
         });
+=======
+>>>>>>> 3d534c718df123c62540a10bb7cfee1a38c09c37
     }
 }

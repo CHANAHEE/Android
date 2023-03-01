@@ -21,8 +21,12 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+<<<<<<< HEAD:Ex40_CollapsingToolbarLayout/app/src/main/res/layout/activity_main.xml
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:contentScrim="@color/teal_700">
+=======
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+>>>>>>> 3d534c718df123c62540a10bb7cfee1a38c09c37:CollapsingToolbarLayout/app/src/main/res/layout/activity_main.xml
 
             <ImageView
                 android:layout_width="match_parent"
@@ -34,6 +38,8 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                app:title="@null"
+                app:menu="@menu/option"
                 />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
