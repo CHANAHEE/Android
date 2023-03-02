@@ -10,7 +10,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Fragment bookmarkFragment,homeFragment;
+    Fragment bookmarkFragment,homeFragment,allRecipeFragment;
     BottomNavigationView bnv;
 
     @Override
@@ -20,16 +20,16 @@ public class MainActivity extends AppCompatActivity {
 
         homeFragment = new HomeFragment();
         bookmarkFragment = new BookmarkFragment();
-
+        allRecipeFragment = new AllRecipeFragment();
         /*
         *
         *  앱 실행시 첫 화면을 홈화면으로 지정하기
         *
         * */
-        getSupportFragmentManager().beginTransaction().add(R.id.container_fragment,homeFragment).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.container_fragment,allRecipeFragment).commit();
 
         bnv = findViewById(R.id.bnv);
-
+        bnv.setSelectedItemId(R.id.allrecipe_tab2);
         bnv.setOnItemSelectedListener( item -> selectedItem(item));
     }
 
@@ -40,8 +40,9 @@ public class MainActivity extends AppCompatActivity {
     * */
     public boolean selectedItem(MenuItem item){
 
-        if(item.getItemId() == R.id.recipes_tab1) getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment,homeFragment).commit();
-        else if(item.getItemId() == R.id.bookmark_tab2) getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment,bookmarkFragment).commit();
+        if(item.getItemId() == R.id.home_tab1) getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment,homeFragment).commit();
+        else if(item.getItemId() == R.id.allrecipe_tab2) getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment,allRecipeFragment).commit();
+        else if(item.getItemId() == R.id.bookmark_tab3) getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment,bookmarkFragment).commit();
         return true;
     }
 }

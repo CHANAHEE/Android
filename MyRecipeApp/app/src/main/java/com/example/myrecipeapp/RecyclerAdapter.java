@@ -1,6 +1,8 @@
 package com.example.myrecipeapp;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -37,7 +39,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VH> {
     public void onBindViewHolder(@NonNull VH holder, int position) {
         Item item = items.get(position);
         Glide.with(context).load(item.mainImg).into(holder.iv);
-        holder.tv.setText(item.title);
+
+        holder.tv_title.setText(item.title);
+        holder.tv_hash.setText(item.hash);
     }
 
     @Override
@@ -48,13 +52,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VH> {
     class VH extends RecyclerView.ViewHolder{
 
         ImageView iv;
-        TextView tv;
+        TextView tv_title,tv_hash;
 
         public VH(@NonNull View itemView) {
             super(itemView);
 
             iv = itemView.findViewById(R.id.recyclerview_iv);
-            tv = itemView.findViewById(R.id.recyclerview_tv);
+            tv_title = itemView.findViewById(R.id.recyclerview_tv_title);
+            tv_hash = itemView.findViewById(R.id.recyclerview_tv_hashtag);
         }
     }
 }

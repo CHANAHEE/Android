@@ -1,10 +1,13 @@
 package com.example.myrecipeapp;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,6 +32,7 @@ public class HomeFragment extends Fragment {
     RecyclerAdapter adapter;
 
     public HomeFragment() {
+
     }
 
 
@@ -46,72 +50,6 @@ public class HomeFragment extends Fragment {
         adapter = new RecyclerAdapter(getActivity(),items);
         recyclerView.setAdapter(adapter);
 
-        new Thread(){
-            @Override
-            public void run() {
-                String address = "http://openapi.foodsafetykorea.go.kr/api/50c404d9fa5141449493/COOKRCP01/xml/1/10";
 
-                try {
-                    URL url = new URL(address);
-
-                    InputStream is = url.openStream();
-                    InputStreamReader isr = new InputStreamReader(is);
-
-                    XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-                    XmlPullParser xpp = factory.newPullParser();
-                    xpp.setInput(isr);
-
-                    int eventType = xpp.getEventType();
-
-                    Item item = null;
-
-                    while(eventType != XmlPullParser.END_DOCUMENT){
-
-                        String tagName = "";
-                        switch (eventType){
-                            case XmlPullParser.START_DOCUMENT:
-
-                                break;
-                            case XmlPullParser.START_TAG:
-                                item = new Item();
-                                tagName = xpp.getName();
-                                if(tagName.equals("RCP_NM")){
-                                    xpp.next();
-                                    item.title = xpp.getText();
-                                    Log.i("title",item.title);
-                                } else if(tagName.equals("ATT_FILE_NO_MAIN")){
-                                    xpp.next();
-                                    item.mainImg = xpp.getText();
-                                }
-                                break;
-                            case XmlPullParser.END_DOCUMENT:
-                                break;
-                            case XmlPullParser.END_TAG:
-                                tagName = xpp.getName();
-                                if(tagName.equals("row")){
-                                    items.add(item);
-                                }
-                                break;
-                            case XmlPullParser.TEXT:
-                                break;
-                        }
-                        eventType = xpp.next();
-                    }
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            adapter.notifyDataSetChanged();
-                        }
-                    });
-
-                } catch (MalformedURLException e) {
-                    throw new RuntimeException(e);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                } catch (XmlPullParserException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        }.start();
     }
 }
