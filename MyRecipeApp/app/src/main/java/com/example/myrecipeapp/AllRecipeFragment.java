@@ -1,5 +1,8 @@
 package com.example.myrecipeapp;
 
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -27,91 +32,15 @@ public class AllRecipeFragment extends Fragment {
     ArrayList<Item> items = new ArrayList<>();
     RecyclerView recyclerView;
     RecyclerAdapter adapter;
+    SQLiteDatabase database;
+    MainActivity mainActivity;
 
-    public AllRecipeFragment() {
-        new Thread(){
-            @Override
-            public void run() {
-                String address = "http://openapi.foodsafetykorea.go.kr/api/50c404d9fa5141449493/COOKRCP01/xml/1/10";
 
-                try {
-                    URL url = new URL(address);
 
-                    InputStream is = url.openStream();
-                    InputStreamReader isr = new InputStreamReader(is);
-
-                    XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-                    XmlPullParser xpp = factory.newPullParser();
-                    xpp.setInput(isr);
-
-                    int eventType = xpp.getEventType();
-
-                    Item item = null;
-                    while(eventType != XmlPullParser.END_DOCUMENT){
-
-                        String tagName = "";
-                        switch (eventType){
-                            case XmlPullParser.START_DOCUMENT:
-
-                                break;
-                            case XmlPullParser.START_TAG:
-                                tagName = xpp.getName();
-                                if(tagName.equals("row")) {
-                                    item = new Item();
-                                    item.hash = "";
-                                } else if(tagName.equals("RCP_NM")){
-                                    xpp.next();
-                                    item.title = xpp.getText();
-                                    Log.i("title",item.title);
-                                } else if(tagName.equals("ATT_FILE_NO_MAIN")){
-                                    xpp.next();
-                                    item.mainImg = xpp.getText();
-                                } else if(tagName.equals("HASH_TAG")){
-
-                                    if(!xpp.isEmptyElementTag()) {
-                                        xpp.next();
-                                        item.hash += "#" + xpp.getText() + "  ";
-                                    }
-                                } else if(tagName.equals("RCP_WAY2")){
-                                    xpp.next();
-                                    item.hash += "#" + xpp.getText() + "  ";
-                                } else if(tagName.equals("RCP_PAT2")){
-                                    xpp.next();
-                                    item.hash += "#" + xpp.getText();
-                                }
-                                break;
-                            case XmlPullParser.END_DOCUMENT:
-                                break;
-                            case XmlPullParser.END_TAG:
-                                tagName = xpp.getName();
-                                if(tagName.equals("row")){
-                                    items.add(item);
-                                    Log.i("end",item.title);
-
-                                }
-
-                                break;
-                            case XmlPullParser.TEXT:
-                                break;
-                        }
-                        eventType = xpp.next();
-                    }
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            adapter.notifyDataSetChanged();
-                        }
-                    });
-
-                } catch (MalformedURLException e) {
-                    throw new RuntimeException(e);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                } catch (XmlPullParserException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        }.start();
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        mainActivity = (MainActivity) context;
     }
 
     @Nullable
@@ -126,5 +55,39 @@ public class AllRecipeFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerview_allrecipe);
         adapter = new RecyclerAdapter(getActivity(),items);
         recyclerView.setAdapter(adapter);
+
+        view.findViewById(R.id.fab).setOnClickListener(v -> {
+            recyclerView.scrollToPosition(RecyclerView.SCROLLBAR_POSITION_DEFAULT);
+        });
+
+        new Thread(){
+            @Override
+            public void run() {
+                mainActivity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        database = SQLiteDatabase.openDatabase("/data/data/com.example.myrecipeapp/databases/recipe.db",null,SQLiteDatabase.OPEN_READONLY);
+                        Cursor cursor = database.rawQuery("SELECT * FROM recipe",null);
+
+                        if(cursor == null) return;
+
+                        int row = cursor.getCount();
+                        cursor.moveToFirst();
+
+                        for(int i=0;i<row;i++){
+                            Item item = new Item();
+                            item.title = cursor.getString(1);
+                            item.mainImg = cursor.getString(2);
+                            item.hash = cursor.getString(3);
+
+                            items.add(item);
+                            cursor.moveToNext();
+                        }
+
+                        adapter.notifyDataSetChanged();
+                    }
+                });
+            }
+        }.start();
     }
 }

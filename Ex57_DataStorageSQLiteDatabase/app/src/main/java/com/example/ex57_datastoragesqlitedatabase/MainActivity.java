@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         etAge = findViewById(R.id.etAge);
         etEmail = findViewById(R.id.etEmail);
 
+        createDb();
         findViewById(R.id.btn_insert).setOnClickListener(view -> clickInsert());
         findViewById(R.id.btn_update).setOnClickListener(view -> clickUpdate());
         findViewById(R.id.btn_delete).setOnClickListener(view -> clickDelete());
