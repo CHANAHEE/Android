@@ -43,7 +43,7 @@ public class SplashActivity extends AppCompatActivity {
 
     }
 
-    void dbInit(){
+    synchronized void dbInit(){
         database = openOrCreateDatabase("recipe.db",MODE_PRIVATE,null);
         database.execSQL("CREATE TABLE IF NOT EXISTS recipe(num INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR(30) NOT NULL, imgurl TEXT, hash VARCHAR(30))");
 
@@ -81,7 +81,6 @@ public class SplashActivity extends AppCompatActivity {
                                 } else if(tagName.equals("RCP_NM")){
                                     xpp.next();
                                     item.title = xpp.getText();
-                                    Log.i("title",item.title);
                                 } else if(tagName.equals("ATT_FILE_NO_MAIN")){
                                     xpp.next();
                                     item.mainImg = xpp.getText();

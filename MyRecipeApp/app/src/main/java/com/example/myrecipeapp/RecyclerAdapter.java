@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -23,7 +25,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VH> {
 
     Context context;
     ArrayList<Item> items;
-
+    FragmentManager manager;
+    Fragment bookMarkFragment;
     public RecyclerAdapter(Context context, ArrayList<Item> items) {
         this.context = context;
         this.items = items;
@@ -60,6 +63,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VH> {
             iv = itemView.findViewById(R.id.recyclerview_iv);
             tv_title = itemView.findViewById(R.id.recyclerview_tv_title);
             tv_hash = itemView.findViewById(R.id.recyclerview_tv_hashtag);
+
+            itemView.setOnClickListener(view -> clickItem());
         }
+
+        void clickItem(){
+            bookMarkFragment = new BookmarkFragment();
+            manager = ((MainActivity)context).getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.container_fragment,bookMarkFragment).commit();
+
+        }
+
     }
 }
