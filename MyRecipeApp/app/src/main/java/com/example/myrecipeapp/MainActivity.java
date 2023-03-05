@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -18,9 +19,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Log.i("main","MainCreate");
         homeFragment = new HomeFragment();
-        bookmarkFragment = new BookmarkFragment();
-        allRecipeFragment = new AllRecipeFragment();
+        bookmarkFragment = new BookmarkFragment(this);
+        allRecipeFragment = new AllRecipeFragment(this);
         /*
         *
         *  앱 실행시 첫 화면을 홈화면으로 지정하기

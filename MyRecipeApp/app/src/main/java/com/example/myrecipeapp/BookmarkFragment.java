@@ -1,14 +1,22 @@
 package com.example.myrecipeapp;
 
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -17,10 +25,20 @@ public class BookmarkFragment extends Fragment {
     ArrayList<Item> items = new ArrayList<>();
     RecyclerAdapter adapter;
     RecyclerView recyclerView;
+    SQLiteDatabase database,databaseSelect;
+    Context context;
+    MainActivity mainActivity;
+    int idx;
+    public BookmarkFragment(MainActivity mainActivity) {
+        this.mainActivity = mainActivity;
 
-    public BookmarkFragment() {
     }
 
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        this.context = context;
+    }
 
     @Nullable
     @Override
@@ -34,6 +52,54 @@ public class BookmarkFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.recyclerview_bookmark);
         adapter = new RecyclerAdapter(getActivity(),items);
+        Log.i("adapter","Bookmark Adapter");
+
+
+
+        new Thread(){
+            @Override
+            public void run() {
+                mainActivity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        database = SQLiteDatabase.openDatabase("/data/data/com.example.myrecipeapp/databases/recipe.db",null,SQLiteDatabase.OPEN_READONLY);
+                        databaseSelect = SQLiteDatabase.openDatabase("/data/data/com.example.myrecipeapp/databases/selecteditem.db",null,SQLiteDatabase.OPEN_READONLY);
+                        Cursor cursor = database.rawQuery("SELECT * FROM recipe",null);
+                        Cursor cursorSelected = databaseSelect.rawQuery("SELECT * FROM selecteditem",null);
+
+                        if(cursor == null || cursorSelected == null) return;
+
+                        int row = cursorSelected.getCount();
+                        cursorSelected.moveToFirst();
+
+                        Log.i("cursor",cursorSelected.getInt(1) +"");
+                        items.clear();
+                        for(int i=0;i<row;i++){
+
+                            cursor.moveToPosition(cursorSelected.getInt(1));
+                            Item item = new Item();
+                            item.index = cursor.getInt(0);
+                            item.title = cursor.getString(1);
+                            item.mainImg = cursor.getString(2);
+                            item.hash = cursor.getString(3);
+
+
+
+                            items.add(item);
+
+                            Log.i("cursor",cursorSelected.getInt(1) +"");
+                            cursorSelected.moveToNext();
+
+                        }
+
+
+                        adapter.notifyDataSetChanged();
+                    }
+                });
+            }
+        }.start();
+
+
         recyclerView.setAdapter(adapter);
     }
 }

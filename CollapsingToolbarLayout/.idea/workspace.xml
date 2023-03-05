@@ -5,74 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c17661c-58b7-4585-9a2a-dedad4febdf1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/render.experimental.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/collapsingtoolbarlayout/ExampleInstrumentedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/collapsingtoolbarlayout/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-anydpi/ic_action_search.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_action_search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_action_search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_action_search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_action_search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/newyork.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/option.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/collapsingtoolbarlayout/ExampleUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ex34_ActionBarLayout/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex34_ActionBarLayout/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ex34_ActionBarLayout/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex34_ActionBarLayout/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ex35_NavigationDrawer/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex35_NavigationDrawer/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ex35_NavigationDrawer/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex35_NavigationDrawer/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ex35_NavigationDrawer/app/src/main/java/com/example/ex35_navigationdrawer/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex35_NavigationDrawer/app/src/main/java/com/example/ex35_navigationdrawer/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ex35_NavigationDrawer/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex35_NavigationDrawer/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ex35_NavigationDrawer/app/src/main/res/values-night/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex35_NavigationDrawer/app/src/main/res/values-night/themes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ex35_NavigationDrawer/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex35_NavigationDrawer/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ex35_NavigationDrawer/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex35_NavigationDrawer/app/src/main/res/values/themes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ex38_FloatingActionButton/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex38_FloatingActionButton/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ex38_FloatingActionButton/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex38_FloatingActionButton/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ex38_FloatingActionButton/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex38_FloatingActionButton/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ex39_CoordinaterLayout/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex39_CoordinaterLayout/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyRecipeApp/app/src/main/java/com/example/myrecipeapp/RecycleritemFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyRecipeApp/app/src/main/res/layout/fragment_recycleritem.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ex58_Notification/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex58_Notification/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ex59_BroadcastReceiver/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex59_BroadcastReceiver/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ex59_BroadcastReceiver/app/src/main/java/com/example/ex59_broadcastreceiver/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex59_BroadcastReceiver/app/src/main/java/com/example/ex59_broadcastreceiver/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ex60_BroadcastReceiver_Booting/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex60_BroadcastReceiver_Booting/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ex60_BroadcastReceiver_Booting/app/src/main/java/com/example/ex60_broadcastreceiver_booting/MyBootingReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex60_BroadcastReceiver_Booting/app/src/main/java/com/example/ex60_broadcastreceiver_booting/MyBootingReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyRecipeApp/app/src/main/java/com/example/myrecipeapp/RecyclerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MyRecipeApp/app/src/main/java/com/example/myrecipeapp/RecyclerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyRecipeApp/app/src/main/java/com/example/myrecipeapp/SplashActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MyRecipeApp/app/src/main/java/com/example/myrecipeapp/SplashActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\CookAndroid\.android\avd\Pixel_2_API_33.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R39N5044TRA]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -86,15 +34,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Android/Projects/CollapsingToolbarLayout&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "D:/Android/Projects/Ex40_CollapsingToolbarLayout"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="CollapsingToolbarLayout.app.main" />

@@ -1,9 +1,13 @@
 package com.example.myrecipeapp;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +30,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VH> {
     Context context;
     ArrayList<Item> items;
     FragmentManager manager;
-    Fragment bookMarkFragment;
+    Fragment recyclerItemFragment;
+    Bundle bundle;
+    int pos;
     public RecyclerAdapter(Context context, ArrayList<Item> items) {
         this.context = context;
         this.items = items;
@@ -40,15 +46,18 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VH> {
 
     @Override
     public void onBindViewHolder(@NonNull VH holder, int position) {
+
+
         Item item = items.get(position);
         Glide.with(context).load(item.mainImg).into(holder.iv);
-
         holder.tv_title.setText(item.title);
+        holder.tv_title.setTag(item.index);
         holder.tv_hash.setText(item.hash);
     }
 
     @Override
     public int getItemCount() {
+        Log.i("size",items.size()+"");
         return items.size();
     }
 
@@ -64,15 +73,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VH> {
             tv_title = itemView.findViewById(R.id.recyclerview_tv_title);
             tv_hash = itemView.findViewById(R.id.recyclerview_tv_hashtag);
 
-            itemView.setOnClickListener(view -> clickItem());
+
+            itemView.setOnClickListener(view -> {
+
+                Log.i("adapter1","bookmarkAdapter");
+                bundle = new Bundle();
+                bundle.putInt("index", (Integer) tv_title.getTag());
+
+                recyclerItemFragment = new RecycleritemFragment();
+                recyclerItemFragment.setArguments(bundle);
+
+                manager = ((MainActivity)context).getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.container_fragment,recyclerItemFragment).addToBackStack(null).commit();
+
+            });
         }
 
-        void clickItem(){
-            bookMarkFragment = new BookmarkFragment();
-            manager = ((MainActivity)context).getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.container_fragment,bookMarkFragment).commit();
-
-        }
 
     }
 }

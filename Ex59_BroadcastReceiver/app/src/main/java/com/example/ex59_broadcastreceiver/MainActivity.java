@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
          *  6_1 명시적 인텐트 : 특정 리시버에게만 보내는 방송!!
          *
          */
-        //Intent intent = new Intent(this, MyReceiver.class);
-        //sendBroadcast(intent);
+//        Intent intent = new Intent(this, MyReceiver.class);
+//        sendBroadcast(intent);
 
         /*
          *

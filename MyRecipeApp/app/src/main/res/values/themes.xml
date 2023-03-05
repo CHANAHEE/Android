@@ -21,4 +21,8 @@
         <item name="android:windowFullscreen">true</item>
         <item name="windowActionBar">false</item>
     </style>
+
+    <style name="Theme.MyRecipeApp.RecyclerItemFragment">
+        <item name="colorControlNormal">#FCB02C</item>
+    </style>
 </resources>

@@ -3,6 +3,7 @@ package com.example.myrecipeapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +18,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -43,15 +48,17 @@ public class SplashActivity extends AppCompatActivity {
 
     }
 
-    synchronized void dbInit(){
+    void dbInit(){
         database = openOrCreateDatabase("recipe.db",MODE_PRIVATE,null);
-        database.execSQL("CREATE TABLE IF NOT EXISTS recipe(num INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR(30) NOT NULL, imgurl TEXT, hash VARCHAR(30))");
-
+        database.execSQL("CREATE TABLE IF NOT EXISTS recipe(num INTEGER PRIMARY KEY , title VARCHAR(30) NOT NULL, imgurl VARCHAR(500), hash VARCHAR(30), ingre VARCHAR(500), howto VARCHAR(2000))");
+        Cursor cursor = database.rawQuery("SELECT * FROM recipe",null);
+        if(cursor.getCount() == 1001) return;
         // INSERT 수행
         new Thread(){
             @Override
             public void run() {
-                String address = "http://openapi.foodsafetykorea.go.kr/api/50c404d9fa5141449493/COOKRCP01/xml/1/1000";
+
+                String address = "http://openapi.foodsafetykorea.go.kr/api/50c404d9fa5141449493/COOKRCP01/xml/1/1001";
 
                 try {
                     URL url = new URL(address);
@@ -66,18 +73,20 @@ public class SplashActivity extends AppCompatActivity {
                     int eventType = xpp.getEventType();
 
                     Item item = null;
-                    while(eventType != XmlPullParser.END_DOCUMENT){
+                    // String[] recipeText = new String[20];
 
+                    while(eventType != XmlPullParser.END_DOCUMENT){
                         String tagName = "";
                         switch (eventType){
                             case XmlPullParser.START_DOCUMENT:
-
+                                item = new Item();
                                 break;
                             case XmlPullParser.START_TAG:
                                 tagName = xpp.getName();
                                 if(tagName.equals("row")) {
-                                    item = new Item();
                                     item.hash = "";
+                                    item.recipe_text = "";
+                                    item.recipe_ingre = "";
                                 } else if(tagName.equals("RCP_NM")){
                                     xpp.next();
                                     item.title = xpp.getText();
@@ -96,14 +105,38 @@ public class SplashActivity extends AppCompatActivity {
                                 } else if(tagName.equals("RCP_PAT2")){
                                     xpp.next();
                                     item.hash += "#" + xpp.getText();
+                                } else if(tagName.equals("RCP_PARTS_DTLS")){
+                                    xpp.next();
+                                    item.recipe_ingre += xpp.getText();
                                 }
+                                else if(tagName.contains("MANUAL") && !(tagName.contains("_IMG"))){
+
+                                    if(!xpp.isEmptyElementTag()){
+                                        xpp.next();
+                                        item.recipe_text += xpp.getText();
+                                    }
+//                                    for(int i=1;i<21;i++){
+//                                        if(!xpp.isEmptyElementTag()){
+//                                            if(tagName.equals("MANUAL"+ (i/10) +(i%10)))
+//                                                recipeText[i-1] = xpp.getText();
+//                                        } else{
+//                                            recipeText[i-1] = "";
+//                                        }
+//                                    }
+
+                                }
+
                                 break;
                             case XmlPullParser.END_DOCUMENT:
                                 break;
                             case XmlPullParser.END_TAG:
                                 tagName = xpp.getName();
+//                                for(int i = 0; i< 20;i++){
+//                                    item.recipe_text += recipeText[i]+"$";
+//                                }
                                 if(tagName.equals("row")){
-                                    database.execSQL("INSERT INTO recipe (title, imgurl, hash) VALUES (?,?,?)",new String[]{ item.title , item.mainImg , item.hash});
+
+                                    database.execSQL("INSERT INTO recipe (title, imgurl, hash, ingre, howto) VALUES (?,?,?,?,?)",new String[]{ item.title , item.mainImg , item.hash, item.recipe_ingre, item.recipe_text});
 
                                 }
 
@@ -131,11 +164,12 @@ public class SplashActivity extends AppCompatActivity {
         @Override
         public void run() {
             try {
-                Thread.sleep(3000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
             startActivity(intent);
+            finish();
         }
     }
 }
