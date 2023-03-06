@@ -1,6 +1,7 @@
 package com.example.myrecipeapp;
 
 import static android.content.Context.MODE_PRIVATE;
+import static android.database.sqlite.SQLiteDatabase.openDatabase;
 import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
 
 import android.content.Context;
@@ -125,8 +126,7 @@ public class RecycleritemFragment extends Fragment {
     }
 
     void saveSelectedItem(){
-        database = context.openOrCreateDatabase("selecteditem.db",MODE_PRIVATE,null);
-        database.execSQL("CREATE TABLE IF NOT EXISTS selecteditem(num INTEGER PRIMARY KEY , idx INTEGER)");
+        database = openDatabase("/data/data/com.example.myrecipeapp/databases/selecteditem.db",null,SQLiteDatabase.OPEN_READWRITE);
         database.execSQL("INSERT INTO selecteditem (idx) VALUES (?)",new String[]{ idx+"" });
         Log.i("cursor",idx +"리사이클러뷰 아이템 인덱스");
         // INSERT 수행

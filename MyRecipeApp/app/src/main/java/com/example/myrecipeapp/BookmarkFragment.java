@@ -27,6 +27,7 @@ public class BookmarkFragment extends Fragment {
     RecyclerView recyclerView;
     SQLiteDatabase database,databaseSelect;
     Context context;
+    TextView tv;
     MainActivity mainActivity;
     int idx;
     public BookmarkFragment(MainActivity mainActivity) {
@@ -50,6 +51,7 @@ public class BookmarkFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        tv = view.findViewById(R.id.tv_noitem);
         recyclerView = view.findViewById(R.id.recyclerview_bookmark);
         adapter = new RecyclerAdapter(getActivity(),items);
         Log.i("adapter","Bookmark Adapter");
@@ -62,10 +64,23 @@ public class BookmarkFragment extends Fragment {
                 mainActivity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        database = SQLiteDatabase.openDatabase("/data/data/com.example.myrecipeapp/databases/recipe.db",null,SQLiteDatabase.OPEN_READONLY);
+
+
                         databaseSelect = SQLiteDatabase.openDatabase("/data/data/com.example.myrecipeapp/databases/selecteditem.db",null,SQLiteDatabase.OPEN_READONLY);
-                        Cursor cursor = database.rawQuery("SELECT * FROM recipe",null);
                         Cursor cursorSelected = databaseSelect.rawQuery("SELECT * FROM selecteditem",null);
+                        recyclerView.setVisibility(View.VISIBLE);
+                        tv.setVisibility(View.GONE);
+                        if(cursorSelected.getCount() == 0){
+                            recyclerView.setVisibility(View.GONE);
+                            tv.setVisibility(View.VISIBLE);
+                            return;
+                        }
+
+                        database = SQLiteDatabase.openDatabase("/data/data/com.example.myrecipeapp/databases/recipe.db",null,SQLiteDatabase.OPEN_READONLY);
+                        Cursor cursor = database.rawQuery("SELECT * FROM recipe",null);
+
+                        Log.i("sel",cursorSelected.getCount()+"");
+
 
                         if(cursor == null || cursorSelected == null) return;
 
