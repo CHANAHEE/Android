@@ -88,10 +88,12 @@ public class RecycleritemFragment extends Fragment {
         actionBar.setHomeAsUpIndicator(R.drawable.ic_action_back);
         actionBar.setTitle("");
 
+        ImageButton bookmark_btn = view.findViewById(R.id.bookmark_btn);
 
-        view.findViewById(R.id.bookmark_btn).setOnClickListener(v -> {
+        bookmark_btn.setOnClickListener(v -> {
             if(v.isSelected()) {
                 v.setSelected(false);
+                deleteSelectedItem();
             }
             else {
                 v.setSelected(true);
@@ -118,19 +120,62 @@ public class RecycleritemFragment extends Fragment {
         String img = cursor.getString(2);
         String ingre = cursor.getString(4);
         String howto = cursor.getString(5);
+        howto = sortHowto(howto);
+        boolean isSelect = seletedItem();
 
         Glide.with(context).load(img).into(rcv_img);
         rcv_title.setText(title);
         rcv_ingre.setText(ingre);
         rcv_howto.setText(howto);
+        bookmark_btn.setSelected(isSelect);
     }
 
+    boolean seletedItem(){
+        database = openDatabase("/data/data/com.example.myrecipeapp/databases/selecteditem.db",null,SQLiteDatabase.OPEN_READWRITE);
+        Cursor cursor = database.rawQuery("SELECT idx FROM selecteditem",null);
+        cursor.moveToFirst();
+        int row = cursor.getCount();
+        Log.i("rowCount",row+"");
+        for(int i=0;i<row;i++){
+            if(cursor.getInt(0) == idx) return true;
+            cursor.moveToNext();
+        }
+
+        return false;
+    }
     void saveSelectedItem(){
         database = openDatabase("/data/data/com.example.myrecipeapp/databases/selecteditem.db",null,SQLiteDatabase.OPEN_READWRITE);
         database.execSQL("INSERT INTO selecteditem (idx) VALUES (?)",new String[]{ idx+"" });
         Log.i("cursor",idx +"리사이클러뷰 아이템 인덱스");
         // INSERT 수행
 
+    }
+
+    void deleteSelectedItem(){
+        database = openDatabase("/data/data/com.example.myrecipeapp/databases/selecteditem.db",null,SQLiteDatabase.OPEN_READWRITE);
+        database.execSQL("DELETE FROM selecteditem WHERE idx="+idx);
+    }
+
+    String sortHowto(String howto){
+        int arrIdx = 0;
+        char index = 1;
+        String[] result = howto.split("[.]");
+        Log.i("split","문자열분류");
+        Log.i("split",result.length+"");
+        for(int i=0;i<result.length;i++){
+            Log.i("split",result[i]);
+        }
+
+        String newResult = "";
+        for(int i =0;i<result.length;i++){
+            for(int k = 0;k<20;k++){
+                if(result[i].equals(k+"")){
+                    newResult += result[i]+" "+result[i+1]+"\n\n";
+
+                }
+            }
+        }
+        return newResult;
     }
 }
 

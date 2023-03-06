@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,10 +31,27 @@ public class HomeFragment extends Fragment {
 
     ArrayList<Item> items = new ArrayList<>();
     RecyclerView recyclerView;
-    RecyclerAdapter adapter;
+    RecyclerGridLayoutAdapter adapter;
+    ImageButton imgBtn;
 
+    String[] ingreNames = {"토마토","가지","피망","브로콜리","양배추","당근","버섯","고추","오이","연근"
+                            ,"마늘","생강","레몬","양파","오렌지","블루베리","파인애플","감자","호박","무"
+                            ,"콩","시금치","대파","딸기","고구마","애호박","소고기","양고기","돼지고기","닭고기"
+                            ,"오리고기","생선","햄","소세지","빵가루","옥수수","밀가루","부침가루","밥","누룽지"};
+
+    int[] ingreIcons = {R.drawable.tomato,R.drawable.aubergine,R.drawable.bellpepper,R.drawable.broccoli,R.drawable.cabbage
+                        ,R.drawable.carrot,R.drawable.champignon,R.drawable.chilipepper,R.drawable.cucumber,R.drawable.courgette
+                        ,R.drawable.garlic,R.drawable.ginger,R.drawable.lemon,R.drawable.onion,R.drawable.orange
+                        ,R.drawable.berry,R.drawable.pineapple,R.drawable.potato,R.drawable.pumpkin,R.drawable.radish
+                        ,R.drawable.soybean,R.drawable.spinach,R.drawable.springonion,R.drawable.strawberry,R.drawable.sweetpotato
+                        ,R.drawable.zucchini,R.drawable.beef,R.drawable.lamb,R.drawable.pork,R.drawable.chicken
+                        ,R.drawable.duck,R.drawable.fish,R.drawable.ham,R.drawable.sausage,R.drawable.breadpowder
+                        ,R.drawable.corn,R.drawable.flour,R.drawable.pancakepowder,R.drawable.rice,R.drawable.ricechip};
     public HomeFragment() {
-
+        Log.i("icon","아이콘1");
+        for(int i=0;i<ingreNames.length;i++){
+            items.add(new Item(ingreNames[i],ingreIcons[i]));
+        }
     }
 
 
@@ -46,10 +65,12 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        Log.i("icon","아이콘2");
         recyclerView = view.findViewById(R.id.recyclerview_home);
-        adapter = new RecyclerAdapter(getActivity(),items);
+        adapter = new RecyclerGridLayoutAdapter(getActivity(),items);
         recyclerView.setAdapter(adapter);
 
 
     }
+
 }
