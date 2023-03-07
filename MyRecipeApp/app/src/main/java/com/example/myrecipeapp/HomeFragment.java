@@ -1,5 +1,6 @@
 package com.example.myrecipeapp;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -15,6 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -33,7 +36,7 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     RecyclerGridLayoutAdapter adapter;
     ImageButton imgBtn;
-
+    ExtendedFloatingActionButton fab;
     String[] ingreNames = {"토마토","가지","피망","브로콜리","양배추","당근","버섯","고추","오이","연근"
                             ,"마늘","생강","레몬","양파","오렌지","블루베리","파인애플","감자","호박","무"
                             ,"콩","시금치","대파","딸기","고구마","애호박","소고기","양고기","돼지고기","닭고기"
@@ -71,6 +74,13 @@ public class HomeFragment extends Fragment {
         recyclerView.setAdapter(adapter);
 
 
+
+        fab = view.findViewById(R.id.fab);
+        fab.setOnClickListener(v->{
+            Intent intent = new Intent(getActivity(), SecondActivity.class);
+            startActivity(intent);
+
+        });
     }
 
 }

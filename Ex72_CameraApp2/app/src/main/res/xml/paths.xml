@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--26_ 이 영역들중 하나를 선택해서 메니페스트의 메타데이타에 넣어주면, 그 영역의 데이터를 다른 앱에서 사용이 가능하다!-->
+    <!-- 24_ 외부저장소의 앱 전용 영역 -->
+    <external-files-path
+        name="external_file"
+        path="."/>
+    <!--  23_ 외부저장소의 Public Directory 영역 경로 -->
+    <external-path
+        name="external"
+        path="."/>
+    <!-- 25_ 내부 저장소 경로 -->
+    <files-path
+        name="files"
+        path="."/>
+
+</paths>
