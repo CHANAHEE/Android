@@ -6,9 +6,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Handler;
 import android.telecom.Connection;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -29,9 +33,10 @@ public class SplashActivity extends AppCompatActivity {
 
     Intent intent;
     SQLiteDatabase database;
-
+    ImageView gif_iv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i("thread","onCreate 진입");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         int uiOptions = getWindow().getDecorView().getSystemUiVisibility();
@@ -43,20 +48,34 @@ public class SplashActivity extends AppCompatActivity {
         newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
 
-        new LoadingThread().start();
 
+        gif_iv = findViewById(R.id.loading_gif);
+        Glide.with(this).load(R.drawable.loading).into(gif_iv);
 
+        LoadingThread loadingThread = new LoadingThread();
+        try {
+            loadingThread.join();
+            loadingThread.start();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
 
     }
 
     class StartThread extends Thread {
+
         @Override
         public void run() {
             Log.i("thread","스타트스레드진입");
             database = openOrCreateDatabase("selecteditem.db",MODE_PRIVATE,null);
             database.execSQL("CREATE TABLE IF NOT EXISTS selecteditem(num INTEGER PRIMARY KEY , idx INTEGER)");
             intent = new Intent(SplashActivity.this, MainActivity.class);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             startActivity(intent);
             finish();
             Log.i("thread","스타트스레드끝");

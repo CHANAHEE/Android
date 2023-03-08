@@ -67,20 +67,16 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        Log.i("icon","아이콘2");
+        fab = view.findViewById(R.id.fab);
         recyclerView = view.findViewById(R.id.recyclerview_home);
-        adapter = new RecyclerGridLayoutAdapter(getActivity(),items);
+        adapter = new RecyclerGridLayoutAdapter(getActivity(),items,fab);
         recyclerView.setAdapter(adapter);
 
-
-
-        fab = view.findViewById(R.id.fab);
-        fab.setOnClickListener(v->{
-            Intent intent = new Intent(getActivity(), SecondActivity.class);
-            startActivity(intent);
-
-        });
+        fab.setOnClickListener(view1 -> clickFab());
+    }
+    void clickFab(){
+        Intent intent = new Intent(getActivity(), SecondActivity.class);
+        startActivity(intent);
     }
 
 }

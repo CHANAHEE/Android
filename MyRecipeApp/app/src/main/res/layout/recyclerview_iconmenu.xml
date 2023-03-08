@@ -7,23 +7,22 @@
 
     <ImageButton
         android:id="@+id/icon_imgbtn"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="fitXY"
         android:src="@mipmap/ic_launcher_round"
         android:background="#FFFFFF"
-
-        android:layout_marginBottom="20dp"
-        android:layout_centerInParent="true"/>
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/icon_title"
         android:layout_below="@id/icon_imgbtn"
-        android:layout_centerHorizontal="true"
         android:textSize="15sp"
         android:fontFamily="@font/dovemayo_gothic"
-        android:paddingTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:textColor="#000000"
         android:text="토마토"/>
+
 </RelativeLayout>
