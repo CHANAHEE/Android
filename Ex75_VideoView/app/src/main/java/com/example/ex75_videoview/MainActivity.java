@@ -44,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.btn).setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-            startActivity(intent);
-        });
+//        findViewById(R.id.btn).setOnClickListener(view -> {
+//            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+//            startActivity(intent);
+//        });
     }
 
     // 8_ 비디오뷰를 사용할 때는 거의 반드시 붙여줘야 하는 기능.
