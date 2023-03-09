@@ -70,11 +70,12 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> permissions = new ArrayList<>();
         permissions.add(Manifest.permission.CAMERA);
         permissions.add(Manifest.permission.RECORD_AUDIO);
-        if(Build.VERSION.SDK_INT <= 28) permissions.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if(Build.VERSION.SDK_INT <= 28) permissions.add(Manifest.permission.MANAGE_EXTERNAL_STORAGE);
 
         int checkResult = checkSelfPermission(permissions.get(0)); // 9_ CAMERA 의 동적 퍼미션만 확인해보자. 원래는 다 해주어야 함. 테스트니까 일단 하나만..( 여러개한다고 가정해보자 )
+        int checkResult2 = checkSelfPermission(permissions.get(1));
 
-        if(checkResult == PackageManager.PERMISSION_DENIED){
+        if(checkResult == PackageManager.PERMISSION_DENIED || checkResult2 == PackageManager.PERMISSION_DENIED){
             // 10_ 퍼미션이 허용되지 않았다면.. 퍼미션을 요청하는 대행사 객체를 이용하자.
             // 13_ 대행사 객체를 만들었다면 런칭하자.
             String[] arr = new String[permissions.size()];
@@ -150,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
     ImageCapture imageCapture = null;
     void clickBtn(){
-        // !@!@#%!@$ 카메라 앱에게 파일 경로를 전달하면 카메라 앱이 찍은 사진을 디비에 저장해줌. 경로 전달시 사용되는게 프로바이더.
+
         // 31_ 여기서 이미지 캡처 로직을 짜주면 된다.
         if(imageCapture == null) return;
 

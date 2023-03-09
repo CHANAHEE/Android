@@ -15,7 +15,6 @@ import com.google.android.exoplayer2.ui.StyledPlayerView;
 
 public class MainActivity extends AppCompatActivity {
 
-    PlayerView playerView;
     StyledPlayerView pv;
     ExoPlayer exoPlayer2;
     ExoPlayer exoPlayer;
@@ -30,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        playerView = findViewById(R.id.playview);
+        pv = findViewById(R.id.pv);
         exoPlayer = new ExoPlayer.Builder(this).build();
-        playerView.setPlayer(exoPlayer);
+        pv.setPlayer(exoPlayer);
 
-// 4_ 이거는 CD 하나짜리~ 영상 하나니까 여러개를 해보자!!
+    // 4_ 이거는 CD 하나짜리~ 영상 하나니까 여러개를 해보자!!
 
 
         // 2_ 영상을 CD 로 굽듯이.
@@ -44,14 +43,14 @@ public class MainActivity extends AppCompatActivity {
         // 3_ 리스너 필요없이, 자동으로 로딩완료까지 기다렸다가 재생한다.
         exoPlayer.play();
 
-//        Uri firstUri = Uri.parse("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4");
-//        Uri secondUri = Uri.parse("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4");
-//
-//        MediaItem item1 = MediaItem.fromUri(firstUri);
-//        MediaItem item2 = MediaItem.fromUri(secondUri);
-//
-//        exoPlayer.addMediaItem(item1);
-//        exoPlayer.addMediaItem(item2);
+    //        Uri firstUri = Uri.parse("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4");
+    //        Uri secondUri = Uri.parse("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4");
+    //
+    //        MediaItem item1 = MediaItem.fromUri(firstUri);
+    //        MediaItem item2 = MediaItem.fromUri(secondUri);
+    //
+    //        exoPlayer.addMediaItem(item1);
+    //        exoPlayer.addMediaItem(item2);
 
         exoPlayer.prepare();
         exoPlayer.play();
