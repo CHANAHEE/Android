@@ -28,7 +28,7 @@ public class User {
     }
 
     // 12_ 버튼 클릭 이벤트 처리하기
-    public void increageAge(View view){
+    public void increaseAge(View view){
         this.age.set(this.age.get()+1);
     }
 }

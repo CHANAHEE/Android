@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 8_ 동적 퍼미션 처리
         ArrayList<String> permissions = new ArrayList<>();
-        permissions.add(Manifest.permission.CAMERA);
+        //permissions.add(Manifest.permission.CAMERA);
         permissions.add(Manifest.permission.RECORD_AUDIO);
         if(Build.VERSION.SDK_INT <= 28) permissions.add(Manifest.permission.MANAGE_EXTERNAL_STORAGE);
 
