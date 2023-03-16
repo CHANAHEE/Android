@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".EditActivity">
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="이름"
+        android:ems="10"
+        android:inputType="text"
+        />
+    <EditText
+        android:id="@+id/et_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="제목"
+        android:ems="20"
+        android:inputType="text"
+        />
+    <EditText
+        android:id="@+id/et_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="내용"
+        android:inputType="textMultiLine"
+        android:layout_weight="1"
+        android:gravity="top"
+        />
+    <EditText
+        android:id="@+id/et_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="가격"
+        android:ems="10"
+        android:inputType="number"
+        />
+    <Button
+        android:id="@+id/btn_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이미지 업로드"
+        android:layout_gravity="right"/>
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/black"
+        android:padding="4dp"/>
+
+    <Button
+        android:id="@+id/btn_complete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/teal_700"
+        android:text="작성 완료"
+        />
+</LinearLayout>
