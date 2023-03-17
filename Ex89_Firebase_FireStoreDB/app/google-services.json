@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1060323407913",
+    "project_id": "ex89firestoredb-cha",
+    "storage_bucket": "ex89firestoredb-cha.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1060323407913:android:2a22fcff704df6a3690438",
+        "android_client_info": {
+          "package_name": "com.example.ex89_firebase_firestoredb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1060323407913-b5lnu2k8m7uomdj1g34dfbibcsjk4ivq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsNEKtvcqKlpJjA7-QBcYKlmzuEb5QP5s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1060323407913-b5lnu2k8m7uomdj1g34dfbibcsjk4ivq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
