@@ -8,6 +8,8 @@ import android.widget.Toast
 
 // 1_ Kotlin 에서 클래스 상속 키워드는 ":" 이며, 상속하는 클래스명 옆에 주생성자를 호출하는 () 가 필수!
 class MainActivity : AppCompatActivity() {
+
+    val tv:TextView by lazy{ findViewById(R.id.tv)}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
