@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    app:contentPadding="16dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:src="@drawable/bg_one08"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ITEM TITLE"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_below="@id/iv"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_low_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title"
+            android:textColor="@color/teal_700"
+            android:layout_marginTop="10dp"
+            android:text="1000원"/>
+
+        <TextView
+            android:id="@+id/tv_mall_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MALL NAME"
+            android:layout_below="@id/tv_low_price"
+            android:layout_marginTop="10dp"
+            android:textSize="10sp"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
