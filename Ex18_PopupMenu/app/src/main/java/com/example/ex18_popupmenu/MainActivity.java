@@ -32,11 +32,12 @@ public class MainActivity extends AppCompatActivity {
                 // PopupMenu 객체를 생성하자
                 // PopupMenu popupMenu = new PopupMenu(MainActivity.this,btn);
                 // 5_ 팝업메뉴를 버튼 말고 다른 뷰에 붙이기 
-                PopupMenu popupMenu = new PopupMenu(MainActivity.this,tv);
+                PopupMenu popupMenu = new PopupMenu(MainActivity.this,btn);
 
                 // 2_ PopupMenu 가 보여줄 메뉴를 설계하자! 어디에? menu 폴더안에 popup.xml 으로 별도로!
                 MenuInflater inflater = getMenuInflater();
                 inflater.inflate(R.menu.popup,popupMenu.getMenu()); // 왜 여기서만 getMenu 인지 모르겠네!! 옵션이랑 컨텐스트랑 차이점 알아보자!
+
 
                 popupMenu.show();
 
@@ -45,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         int id = menuItem.getItemId();
-                        if(id == R.id.menu_info) Toast.makeText(MainActivity.this,"인포메이션 버튼이 클릭되었습니다.",Toast.LENGTH_SHORT).show();
+                        if(id == R.id.menu_info) {
+                            btn.setText("infomation");
+                        }
                         else if(id == R.id.menu_delete) Toast.makeText(MainActivity.this, "삭제버튼이 클릭되었습니다.", Toast.LENGTH_SHORT).show();
                         else if(id == R.id.menu_modify) Toast.makeText(MainActivity.this, "변경버튼이 클릭되었습니다.", Toast.LENGTH_SHORT).show();
                         return false;

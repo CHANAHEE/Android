@@ -8,7 +8,8 @@
         android:id="@+id/menu_search"
         android:title="search"
         android:icon="@drawable/ic_action_search"
-        app:showAsAction="always"/>
+        app:showAsAction="always"
+        />
 
     <!--  5_ imageAsset 으로 만든다! 만들고 icon 속성으로 설정해주면 끗-->
     <!--  6_ showAsAction 속성으로 메뉴가 보이게 설정! ifRoom 은 공간이 있어야 추가해줌. 이게 권장됨. -->

@@ -6,16 +6,20 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.PickVisualMediaRequest;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.ClipData;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.widget.TextView;
 
-import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator;
+//import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Uri> images = new ArrayList<>();
     MyAdapter adapter;
     ViewPager2 pager;
-    SpringDotsIndicator dotsIndicator;
+   //SpringDotsIndicator dotsIndicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,20 +43,26 @@ public class MainActivity extends AppCompatActivity {
         pager.setAdapter(adapter);
 
         // 5_ 도트 인디케이터도 사용해보자~ 쉽네
-        dotsIndicator = findViewById(R.id.dots_indicator);
-        dotsIndicator.attachTo(pager);
+//        dotsIndicator = findViewById(R.id.dots_indicator);
+//        dotsIndicator.attachTo(pager);
 
         findViewById(R.id.btn1).setOnClickListener(view -> clickBtn1());
         findViewById(R.id.btn2).setOnClickListener(view -> clickBtn2());
         findViewById(R.id.btn3).setOnClickListener(view -> clickBtn3());
+
+
     }
 
     ActivityResultLauncher<Intent> launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
             result -> {
-                if(result.getResultCode() != RESULT_CANCELED){
+                if(result.getResultCode() == RESULT_OK){
                     // 2_ 사진 uri 들을 가져온 택배기사를 소환하자.
+
+                    result.getData().getClipData().getItemCount();
                     Intent intent = result.getData();
+                    assert intent != null;
                     ClipData clipData = intent.getClipData(); // 3_ 여러개면 getData() 가 아니라 getClipData(); !!
+                    Log.i("Hdddd",result.getData().toString());
                     int size = clipData.getItemCount();
 
                     for(int i =0;i<size;i++){
@@ -65,11 +75,12 @@ public class MainActivity extends AppCompatActivity {
     );
     void clickBtn1(){
         // 1_ putExtra 로 사진을 여러개 선택하겠다는 정보를 전달하자. 인텐트 클래스가 그 키값을 가지고 있음
-        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT).setType("image/*").putExtra(Intent.EXTRA_ALLOW_MULTIPLE,true);
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT).addCategory(Intent.CATEGORY_OPENABLE).setType("image/*").putExtra(Intent.EXTRA_ALLOW_MULTIPLE,true);
         launcher.launch(intent);
 
         // 4_ 이제 첫번째 버튼을 누르면, 사진을 가져와서, 뷰페이져에 뿌려주자. 그러기 위해 어댑터랑, 뷰페이저의 시안을 만들자. page.xml과 MyAdapter 를 설계.
     }
+
 
     void clickBtn2(){
         multiplePickLauncher.launch(new PickVisualMediaRequest());

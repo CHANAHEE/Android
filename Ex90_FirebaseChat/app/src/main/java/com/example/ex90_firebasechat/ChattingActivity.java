@@ -51,6 +51,8 @@ public class ChattingActivity extends AppCompatActivity {
         firestore = FirebaseFirestore.getInstance();
         chatRef = firestore.collection(chatRoomName);
 
+
+
         // 10_ chat1 컬렉션에 저장되어 있는 데이터 읽어오기
         // chatRef 의 데이터가 변경될 때마다 반응하는 리스너를 추가하자.
         chatRef.addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -105,6 +107,7 @@ public class ChattingActivity extends AppCompatActivity {
 
         // 7_ 채팅방이름으로 컬렉션에 채팅메시지들을 저장
         // 단, 시간순으로 정렬되도록 .. document 의 이름은 현재 시간(1970년부터 카운트된 ms)으로 지정하자.
+
         chatRef.document("MSG_" + System.currentTimeMillis()).set(item);
         // 8_ 다음 메시지 입력이 수월하도록 EditText 에 있는 글씨를 초기화하자.
         binding.et.setText("");
