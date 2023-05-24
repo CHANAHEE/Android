@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 5_ 부트스트랩 CSS 라이브러리 -->
+        <link href="./bootstrap.min.css" rel="stylesheet">
+        <!-- 내부 스크립트 -->
+        <script>
+            // Native Android 에서 호출할 함수 - 파라미터로 값 전달 받기
+            function setMessage(msg){
+                document.getElementById('aa').innerHTML = msg;
+            }
+
+            // 8_ Native Android 로 메세지 보내기
+            function aaa(){
+                // input 요소에 써있는 글씨부터 얻어오기
+                var message = document.getElementById('in1').value;
+
+                // 안드로이드의 중계인 객체에게 원하는 기능을 요청
+
+                // 13_ 코틀린에서 중계인 객체를 등록하면서 지정한 "Droid" 라는 이름이
+                // JS 의 최상위 객체인 window 의 멤버 속성으로 자동 추가됨.
+                window.Droid.showMessage(message);
+            }
+
+            // 사진 선택 앱을 여는 기능함수.
+            function bbb(){
+                Droid.openPhotoApp();
+            }
+        </script>
+    </head>
+    <body>
+        <h5>Native Android 로 부터 받은 메시지</h5>
+        <h6 id="aa">WAIT...</h6>
+
+
+        <hr>
+        <!-- 6_ CSS 적용 -->
+        <h5 class="mt-5">Native Android 로 보낼 메시지</h5>
+        <input class="form-control mt-3" type="text" id="in1" placeholder="메시지 입력">
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary btn-block mt-3" onclick="aaa()">send message to native Android</button>
+            <button class="btn btn-success btn-block mt-2" onclick="bbb()">사진</button>
+        </div>
+    </body>
+</html>
