@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <!-- 5_ 레이아웃 뷰와 바인딩할 데이터의 변수 선언 -->
+    <data>
+        <variable
+            name="vm"
+            type="com.cha.mvvm.viewmodel.MyViewModel" />
+    </data>
+
+    <!-- 6_ 레이아웃 뷰 -->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".view.MainActivity">
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MVVM 예제"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:padding="8dp"/>
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="이름"
+            android:inputType="text"
+            android:onTextChanged="@{vm::changeName}"/>
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="이메일"
+            android:inputType="textEmailAddress"
+            android:onTextChanged="@{vm::changeEmail}"/>
+
+<!-- 11_       메소드 등록 !! -->
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="save data"
+            android:onClick="@{vm::clickSave}"/>
+
+        <Button
+            android:id="@+id/btn_load"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/teal_700"
+            android:text="load data"
+            android:layout_marginTop="5dp"
+            android:onClick="@{vm::clickLoad}"/>
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{String.format(@string/item_data, vm.model.name, vm.model.email)}"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:padding="8dp"/>
+<!--android:text="@{vm.model.name}"-->
+
+    </LinearLayout>
+</layout>
