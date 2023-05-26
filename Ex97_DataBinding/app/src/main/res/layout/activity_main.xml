@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <!-- 2_ 레이아웃 뷰와 바인딩할 데이터 변수 선언 -->
+    <data>
+        <variable
+            name="user"
+            type="com.cha.ex97_databinding.User"/>
+    </data>
+
+    <!-- 3_ 화면 레이아웃 뷰 -->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".MainActivity">
+
+        <!-- 4_ 글씨를 보여주는 TextView 를 만들어보자 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@{user.name}"/>
+
+        <!-- 7_ Int 형 값을 보여주는 텍스트 -->
+        <!-- TextView 니까 int 형을 써넣으면 R 의 id 값으로 인식. valueOf 로 형변환해서 보여줘야함.-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@{String.valueOf(user.age)}"/>
+
+        <!-- 8_ Boolean 값을 보여주는 CheckBox -->
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="좋아효"
+            android:checked="@{user.fav}"
+            android:onCheckedChanged="@{user::changeFav}"/>
+
+        <!-- 9_ 클릭이벤트에 따라 user.name 을 변경해보자. User 클래스로~~ -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="이름 변경"
+            android:onClick="@{user::changeName}"/>
+
+        <!-- 12_ age 값 1 증가하는 버튼 -->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/teal_700"
+            android:text="나이 증가"
+            android:onClick="@{user::increaseAge}"/>
+
+        <!-- 15_ 좋아요 체크상태 변경 버튼 -->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:text="좋아요"
+            android:onClick="@{(v)->user.toggleFav()}"/>
+
+        <!-- 18_ EditText 글씨를 제어하기 -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:textColorHint="#8E8E8E"
+            android:inputType="textEmailAddress"
+            android:onTextChanged="@{user::onSaveEmail}"/>
+
+
+        <!-- 23_ EditText 의 글씨를 버튼이 클릭되면 TextView 에 뿌려주기 -->
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="입력하세요"
+            android:textColorHint="#8E8E8E"
+            android:inputType="textEmailAddress"
+            android:onTextChanged="@{(s,start,end,count)->user.changeInputValue(s)}"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/teal_700"
+            android:text="저장"
+            android:onClick="@{(v)->user.completeBtn()}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:text="@{user.observeValue}"/>
+
+
+
+
+
+        <!-- 24_ Fragment 에서 데이터바인딩 && 기본속성으로 지정이 불가한 dataBinding 대응 -->
+        <!-- 일단 프래그먼트 만들자~~ -->
+        <fragment
+            android:id="@+id/fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.cha.ex97_databinding.MyFragment"
+            tools:layout="@layout/fragment_my"/>
+    </LinearLayout>
+</layout>
