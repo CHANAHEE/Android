@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <!-- 1_ 레이아웃 xml 에서 사용할 데이터 변수 -->
+    <data>
+        <!-- 4_ 변수만들기. 뷰모델 클래스 만들러가자~~ -->
+        <variable
+            name="vm"
+            type="com.cha.ex98_databinding_bindingadapter.MyViewModel" />
+    </data>
+
+    <!-- 2_ 화면 UI -->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".MainActivity">
+
+        <!-- 3_ (1) 서버의 URL 데이터와 바인딩을 하는 이미지뷰를 만들어보자. -->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center"
+            app:imageUrl="@{vm.img}"/>
+        <!-- 7_ src 속성은 res 폴더 안에 있는 이미지만 보여줄 수 있음. -->
+        <!-- 대부분의 이미지는 서버에 있는 경우가 많기에 src 속성 사용이 불가능 -->
+        <!-- dataBinding 을 하려면 xml 속성으로 변수와 연결해야 함. -->
+        <!-- 하지만 ImageView 에는 URL 을 설정하는 속성이 기본적으로 제공되지 않음. -->
+
+        <!-- 8_ 그래서 개발자가 원하는 속성을 직접 만들수있는 문법이 존재함 : @BindingAdapter 라고 부름 -->
+        <!-- BindingAdapter 를 설정하는 클래스를 정의하기 -->
+
+        <!-- 15_ 버튼눌렀을 때 이미지 바꾸기 -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="change image"
+            android:onClick="@{v->vm.changeImage()}"/>
+
+        <!-- 17_ 리사이클러뷰에 대량의 데이터 (List or Array) 바인딩 하는 custom 속성 지정 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            app:itemList = "@{vm.items}"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="add item"
+            android:onClick="@{v->vm.addItem()}"/>
+
+    </LinearLayout>
+</layout>
